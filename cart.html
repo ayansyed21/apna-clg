@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+button{
+    background: #000;
+    color: white;
+    padding:  10px 22px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 8px;
+}
+
+button:hover{
+    background: #d4af37;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.checkout-btn{
+    background: linear-gradient(to right, #000 ,#333);
+    padding: 12px 28px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+span{
+    margin: 0 12px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button[onclick*="removeItem"]{
+    background: #c62828;
+    color: white;
+}
+
+img{
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+#cart-items div{
+    margin-bottom: 30px;
+}
+
+
+</style>
+
+</head>
+<body>
+    
+<h1>Your Cart</h1>
+
+<button class="checkout-btn"
+onclick="goCheckout()" >
+Proceed To Checkout
+</button>
+  
+<h3 id="total"></h3>
+<div id="cart-items"></div>
+
+<script>
+
+    function goCheckout() {
+ 
+  let totalElem = document.getElementById("total");
+  let price = totalElem ? totalElem.innerText.replace(/[^\d]/g, '') : "0";
+
+ 
+  localStorage.setItem("totalPrice", price);
+  localStorage.setItem("checkoutPrice", price);
+
+  
+  window.location.href = "checkout.html";
+
+}
+
+    function increaseQty(index) {
+
+    cart[index].quantity = (cart[index].quantity || 1) + 1;
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    displayCart();
+}
+
+function decreaseQty(index) {
+
+    if ((cart[index].quantity || 1) > 1) {
+
+        cart[index].quantity--;
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        displayCart();
+    }
+}
+</script>
+
+<script src="index1.js"></script>
+
+</body>
+</html>

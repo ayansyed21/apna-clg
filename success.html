@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Success - Ayeluxe</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#fff7fb,#fff0f5);
+}
+.box{
+background:#fff;
+padding:40px 30px;
+border-radius:24px;
+box-shadow:0 8px 30px rgba(0,0,0,.08);
+text-align:center;
+max-width:420px;
+width:90%;
+}
+.check{
+width:90px;
+height:90px;
+line-height:90px;
+margin:auto;
+border-radius:50%;
+background:#22c55e;
+color:white;
+font-size:50px;
+font-weight:bold;
+animation:pop .6s ease;
+}
+@keyframes pop{
+0%{transform:scale(.4)}
+100%{transform:scale(1)}
+}
+h1{
+margin-top:22px;
+font-size:32px;
+color:#111;
+}
+p{
+margin-top:14px;
+color:#555;
+line-height:1.6;
+}
+.order{
+margin-top:18px;
+background:#fafafa;
+padding:14px;
+border-radius:14px;
+font-weight:bold;
+}
+.btn{
+display:inline-block;
+margin-top:25px;
+background:#111;
+color:#fff;
+text-decoration:none;
+padding:14px 28px;
+border-radius:40px;
+font-weight:bold;
+}
+.btn:hover{
+opacity:.9;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<div class="check">✓</div>
+<h1>Order Placed!</h1>
+<p>
+Congratulations! Your payment was successful and your order has been received.
+</p>
+
+<div class="order">
+Order ID: AYX1024
+</div>
+
+<a href="index.html" class="btn">Continue Shopping</a>
+</div>
+
+</body>
+</html>

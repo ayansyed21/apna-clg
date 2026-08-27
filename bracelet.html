@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayeluxe Products</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+
+body{
+    margin:0;
+      font-family: 'Poppins',sans-serif;
+    background:#f7f7f7;
+}
+
+
+
+
+/* PRODUCTS */
+
+.products{
+    padding:30px 20px;
+}
+
+/* GRID */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* IMAGE */
+
+.img-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.img-box img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+    transition:0.4s;
+}
+
+.hover-img{
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+}
+
+.card:hover .hover-img{
+    opacity:1;
+}
+
+.card:hover .main-img{
+    opacity:0;
+}
+
+/* SALE */
+
+.sale-tag{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:#ef5f6f;
+    color:white;
+    padding:6px 12px;
+    font-size:12px;
+    font-weight:600;
+    border-radius:4px;
+}
+
+/* TITLE */
+
+.card h3{
+    font-size:14px;
+    padding:14px 14px 5px;
+    color:#333;
+    line-height:1.4;
+}
+
+/* PRICE */
+
+.price{
+    padding:0 14px 14px;
+}
+
+.old-price{
+    color:#d98a94;
+    text-decoration:line-through;
+    margin-right:8px;
+    font-size:16px;
+}
+
+.new-price{
+    font-size:18px;
+    font-weight:700;
+}
+
+/* BUTTONS */
+
+.card-buttons{
+    display:flex;
+    gap:8px;
+    padding:0 14px 18px;
+}
+
+.cart-btn,
+.buy-btn{
+    flex:1;
+    height:42px;
+    border:none;
+    border-radius:25px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cart-btn{
+    background:#ef9fb0;
+    color:white;
+}
+
+.cart-btn:hover{
+    background:#e88bb0;
+}
+
+.buy-btn{
+    background:black;
+    color:white;
+}
+
+.buy-btn:hover{
+    background:#e78ea1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.img-box img{
+    height:240px;
+}
+
+.card h3{
+    font-size:15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333;
+    margin: 12px 14px 18px;
+    min-height: 48px;
+    letter-spacing: 0.2px;
+}
+
+.card{
+    background:#fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.old-price{
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+.new-price{
+    font-size:16px;
+    font-weight: 500;
+    color: #111;
+}
+
+
+.card-buttons{
+    flex-direction:column;
+}
+
+.cart-btn,
+.buy-btn{
+font-weight: 500;
+    font-size:14px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<section class="products">
+
+<div class="product-grid">
+
+
+
+<!-- CARD 1 -->
+
+<div class="card" onclick="openProduct(1)">
+
+<div class="img-box">
+
+<img src="images/tory_burch_kira_enamel_bracelet_hand.png" class="main-img">
+
+<img src="images/tory_burch_kira_enamel_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Tory Burch Kira Enamel Bracelet | Luxury Gold Plated Designer Cuff</h3>
+
+<div class="price">
+
+<span class="old-price">349</span>
+
+<span class="new-price">299</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Tory Burch Kira Enamel Bracelet',
+299,
+'images/tory_burch_kira_enamel_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Tory Burch Kira Enamel Bracelet',
+299,
+'images/tory_burch_kira_enamel_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(2)">
+
+<div class="img-box">
+
+<img src="images/tree_of_life_bangle_bracelet_hand.png" class="main-img">
+
+<img src="images/tree_of_life_bangle_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Tree of Life Bangle Bracelet | Elegant Minimal Charm Bracelet</h3>
+
+<div class="price">
+
+<span class="old-price">₹499</span>
+
+<span class="new-price">₹299</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Tree of Life Bangle Bracelet',
+299,
+'images/tree_of_life_bangle_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Tree of Life Bangle Bracelet',
+299,
+'images/tree_of_life_bangle_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(3)">
+
+<div class="img-box">
+
+<img src="images/snake_wrap_kada_bracelet_hand.png" class="main-img">
+
+<img src="images/snake_wrap_kada_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Snake Wrap Kada Bracelet | Adjustable Gold Open Cuff</h3>
+
+<div class="price">
+
+<span class="old-price">₹499</span>
+
+<span class="new-price">₹299</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Snake Wrap Kada Bracelet',
+299,
+'images/snake_wrap_kada_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Snake Wrap Kada Bracelet',
+299,
+'images/snake_wrap_kada_bracelet.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(4)">
+
+<div class="img-box">
+
+<img src="images/roman_numeral_anti_tarnish_bracelet_hand.png" class="main-img">
+
+<img src="images/roman_numeral_anti_tarnish_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Roman Numeral Anti Tarnish Bracelet | Premium Stainless Steel Bangle</h3>
+<div class="price">
+
+<span class="old-price">₹499</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Roman Numeral Anti Tarnish Bracelet',
+349,
+'images/roman_numeral_anti_tarnish_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Roman Numeral Anti Tarnish Bracelet',
+349,
+'images/roman_numeral_anti_tarnish_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+
+
+<!-- CARD 5 -->
+<div class="card" onclick="openProduct(5)">
+
+<div class="img-box">
+<img src="images/rolex_inspired_lattice_kada_hand.png" class="main-img">
+<img src="images/rolex_inspired_lattice_kada.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Rolex Inspired Lattice Kada | Luxury Gold Textured Bracelet</h3>
+
+<div class="price">
+<span class="old-price">₹499</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Rolex Inspired Lattice Kada',
+349,
+'images/rolex_inspired_lattice_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Rolex Inspired Lattice Kada',
+349,
+'images/rolex_inspired_lattice_kada.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+
+<!-- CARD 6 -->
+<div class="card" onclick="openProduct(6)">
+<div class="img-box">
+<img src="images/luxury_roman_numeral_circle_bracelet_hand.png" class="main-img">
+<img src="images/luxury_roman_numeral_circle_bracelet.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Luxury Roman Numeral Circle Bracelet | Trendy Designer Wristwear</h3>
+
+
+<div class="price">
+<span class="old-price">₹499</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Luxury Roman Numeral Circle Bracelet',
+394,
+'images/luxury_roman_numeral_circle_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Luxury Roman Numeral Circle Bracelet',
+349,
+'images/luxury_roman_numeral_circle_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 7 -->
+<div class="card" onclick="openProduct(7)">
+<div class="img-box">
+<img src="images/gold_plated_daisy_flower_open_cuff_bracelet_hand.png" class="main-img">
+<img src="images/gold_plated_daisy_flower_open_cuff_bracelet.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Gold Plated Daisy Flower Open Cuff Bracelet | Korean Style Floral Bangle</h3>
+
+
+<div class="price">
+<span class="old-price">₹499</span>
+<span class="new-price">₹299</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Gold Plated Daisy Flower Open Cuff Bracelet',
+299,
+'images/gold_plated_daisy_flower_open_cuff_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Gold Plated Daisy Flower Open Cuff Bracelet',
+299,
+'images/gold_plated_daisy_flower_open_cuff_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 8 -->
+<div class="card" onclick="openProduct(8)">
+<div class="img-box">
+<img src="images/gold_tone_bangle_watch_design_hand.png" class="main-img">
+<img src="images/gold_tone_bangle_watch_design.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Gold Tone Bangle Watch Design Bracelet | Elegant Fashion Wrist Bracelet</h3>
+
+<div class="price">
+<span class="old-price">₹449</span>
+<span class="new-price">₹299</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Gold Tone Bangle Watch Design',
+299,
+'images/gold_tone_bangle_watch_design.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Gold Tone Bangle Watch Design',
+299,
+'images/gold_tone_bangle_watch_design.png.'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+<!--8 TO 16-->
+
+
+
+<div class="card" onclick="openProduct(9)">
+
+<div class="img-box">
+
+<img src="images/triple_clover_bracelet_hand.png" class="main-img">
+
+<img src="images/triple_clover_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Triple Clover Bracelet | Luxury Korean Style Wristwear</h3>
+
+<div class="price">
+
+<span class="old-price">₹400</span>
+
+<span class="new-price">₹249</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Ttriple Clover Bracelet',
+249,
+'images/triple_clover_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Ttriple Clover Bracelet',
+249,
+'images/triple_clover_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(10)">
+
+<div class="img-box">
+
+<img src="images/single_black_clover_bracelet_hand.png" class="main-img">
+
+<img src="images/single_black_clover_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Single Black Clover Bracelet | Minimal Elegant Everyday Wear</h3>
+
+<div class="price">
+
+<span class="old-price">₹399</span>
+
+<span class="new-price">₹249</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Single Black Clover Bracelet',
+249,
+'images/single_black_clover_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Single Black Clover Bracelet',
+249,
+'images/single_black_clover_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(11)">
+
+<div class="img-box">
+
+<img src="images/royal_wave_pattern_kada_hand.png" class="main-img">
+
+<img src="images/royal_wave_pattern_kada.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Royal Wave Pattern Kada | Premium Textured Designer Kada</h3>
+
+<div class="price">
+
+<span class="old-price">₹449</span>
+
+<span class="new-price">₹299</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Royal Wave Pattern Kada',
+299,
+'images/royal_wave_pattern_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Royal Wave Pattern Kada',
+299,
+'images/royal_wave_pattern_kada.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(12)">
+
+<div class="img-box">
+
+<img src="images/luxury_roman_clover_kada_hand.png" class="main-img">
+
+<img src="images/luxury_roman_clover_kada.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Luxury Roman Clover Kada | Premium Roman Style Luxury Wristwear</h3>
+<div class="price">
+
+<span class="old-price">₹349</span>
+
+<span class="new-price">₹299</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Luxury Roman Clove Kada',
+299,
+'images/luxury_roman_clover_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Luxury Roman Clove Kadat',
+299,
+'images/luxury_roman_clover_kada.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+
+
+<!-- CARD 5 -->
+<div class="card" onclick="openProduct(13)">
+<div class="img-box">
+<img src="images/luxury_floral_clover_kada_hand.png" class="main-img">
+<img src="images/luxury_floral_clover_kada.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Luxury Floral Clover Kada | Elegant Floral Inspired Luxury Design
+</h3>
+
+<div class="price">
+<span class="old-price">₹499</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Luxury Floral Clover Kada',
+349,
+'images/luxury_roman_clover_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Luxury Floral Clover Kada',
+349,
+'images/luxury_roman_clover_kada.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+
+<!-- CARD 6 -->
+<div class="card" onclick="openProduct(14)">
+<div class="img-box">
+<img src="images/golden_clover_style_bangle_bracelet_hand.png" class="main-img">
+<img src="images/golden_clover_style_bangle_bracelet.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Golden Clover Style Bangle Bracelet | Elegant Korean Style Gold Finish</h3>
+
+
+<div class="price">
+<span class="old-price">₹399</span>
+<span class="new-price">₹249</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Golden Clover Style Bangle Bracelet ',
+249,
+'images/golden_clover_style_bangle_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Golden Clover Style Bangle Bracelet ',
+249,
+'images/golden_clover_style_bangle_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 7 -->
+<div class="card" onclick="openProduct(15)">
+<div class="img-box">
+<img src="images/anti_tanish_bangle_watch_hand.png" class="main-img">
+<img src="images/anti_tanish_bangle_watch.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Anti Tanish Bangle Watch | Premium Waterproof Luxury Watch Bracelet</h3>
+
+
+<div class="price">
+<span class="old-price">₹999</span>
+<span class="new-price">₹599</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'>Anti Tanish Bangle Watch',
+599,
+'images/anti_tanish_bangle_watch.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'>Anti Tanish Bangle Watch',
+599,
+'images/anti_tanish_bangle_watch.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 8 -->
+<div class="card" onclick="openProduct(16)">
+<div class="img-box">
+<img src="images/gold_plated_daisy_flower_bracelet_hand.png" class="main-img">
+<img src="images/gold_plated_daisy_flower_bracelet.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>
+Gold Plated Daisy Flower Bracelet | Elegant Floral Korean Style Bracelet</h3>
+
+<div class="price">
+<span class="old-price">₹499</span>
+<span class="new-price">₹299</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Gold Plated Daisy Flower Bracelet',
+299,
+'images/gold_plated_daisy_flower_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Gold Plated Daisy Flower Bracelet',
+299,
+'images/gold_plated_daisy_flower_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+<!--16 TO 28-->
+
+
+<div class="card" onclick="openProduct(17)">
+
+<div class="img-box">
+
+<img src="images/black_white_circle_bracelet_hand.png" class="main-img">
+
+<img src="images/black_white_circle_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Black White Circle Bracelet | Minimal Luxury Couple Style Bracelet (Baby Size)</h3>
+
+<div class="price">
+
+<span class="old-price">₹599</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Black White Circle Bracelet',
+349,
+'images/black_white_circle_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Black White Circle Bracelet',
+349,
+'images/black_white_circle_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(18)">
+
+<div class="img-box">
+
+<img src="images/royal_evil_eye_crystal_kada_hand.png" class="main-img">
+
+<img src="images/royal_evil_eye_crystal_kada.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Royal Evil Eye Crystal Kada | Premium Evil Eye Stone Designer Kada</h3>
+
+<div class="price">
+
+<span class="old-price">₹400</span>
+
+<span class="new-price">₹249</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Royal Evil Eye Crystal Kada ',
+249,
+'images/royal_evil_eye_crystal_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Royal Evil Eye Crystal Kada ',
+249,
+'images/royal_evil_eye_crystal_kada.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(19)">
+
+<div class="img-box">
+
+<img src="images/evil_eye_heart_crystal_kada_hand.png" class="main-img">
+
+<img src="images/evil_eye_heart_crystal_kada.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Evil Eye Heart Crystal Bracelet | Elegant Crystal Charm Bracelet</h3>
+
+<div class="price">
+
+<span class="old-price">₹599</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Evil Eye Heart Crystal Kada',
+349,
+'images/evil_eye_heart_crystal_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Evil Eye Heart Crystal Kada',
+349,
+'images/evil_eye_heart_crystal_kada.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(20)">
+
+<div class="img-box">
+
+<img src="images/dual_clover_elegance_bracelet_hand.png" class="main-img">
+
+<img src="images/dual_clover_elegance_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Dual Clover Elegance Bracelet | Elegant Korean Style Luxury Bracelet</h3>
+<div class="price">
+
+<span class="old-price">₹400</span>
+
+<span class="new-price">₹249</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Dual Clover Elegance Bracelet',
+249,
+'images/dual_clover_elegance_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Dual Clover Elegance Bracelet',
+249,
+'images/dual_clover_elegance_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+
+
+<!-- CARD 5 -->
+<div class="card" onclick="openProduct(21)">
+<div class="img-box">
+<img src="images/double_lined_leaf_kada_bracelet_hand.png" class="main-img">
+<img src="images/double_lined_leaf_kada_bracelet.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Double Lined Leaf Kada Bracelet | Elegant Leaf Design Premium Kada</h3>
+
+<div class="price">
+<span class="old-price">₹699</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Rolex Inspired Lattice Kada',
+349,
+'images/Double Lined Leaf Kada Bracelet'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Double Lined Leaf Kada Bracelet',
+349,
+'images/double_lined_leaf_kada_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+
+<!-- CARD 6 -->
+<div class="card" onclick="openProduct(22)">
+<div class="img-box">
+<img src="images/double_heart_crystal_bracelet_hand.png" class="main-img">
+<img src="images/double_heart_crystal_bracelet.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Double Heart Crystal Bracelet | Elegant Couple Style Crystal Bracelet</h3>
+
+
+<div class="price">
+<span class="old-price">₹500</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Double Heart Crystal Bracelet',
+349,
+'images/double_heart_crystal_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Double Heart Crystal Bracelet',
+349,
+'images/double_heart_crystal_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 7 -->
+<div class="card" onclick="openProduct(23)">
+<div class="img-box">
+<img src="images/curly_rainbow_stone_kada_hand.png" class="main-img">
+<img src="images/curly_rainbow_stone_kada.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Curly Rainbow Stone Kada | Colorful Premium Designer Stone Kada</h3>
+
+
+<div class="price">
+<span class="old-price">₹349</span>
+<span class="new-price">₹299</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Curly Rainbow Stone Kada',
+299,
+'images/curly_rainbow_stone_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Curly Rainbow Stone Kada',
+299,
+'images/curly_rainbow_stone_kada.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 8 -->
+<div class="card" onclick="openProduct(24)">
+<div class="img-box">
+<img src="images/circle_glow_rhinestone_bangle_hand.png" class="main-img">
+<img src="images/circle_glow_rhinestone_bangle.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Circle Glow Rhinestone Bangle | Luxury Sparkling Stone Designer Bangle</h3>
+
+<div class="price">
+<span class="old-price">₹599</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Circle Glow Rhinestone Bangle',
+349,
+'images/circle_glow_rhinestone_bangle.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Circle Glow Rhinestone Bangle',
+349,
+'images/circle_glow_rhinestone_bangle.png.'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+<!--LAST 4-->
+
+
+
+<div class="card" onclick="openProduct(25)">
+
+<div class="img-box">
+
+<img src="images/midnight_circle_luxe_bracelet_hand.png" class="main-img">
+
+<img src="images/midnight_circle_luxe_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Midnight Circle Luxe Bracelet | Minimal Gold & Black Designer Wristwear</h3>
+
+<div class="price">
+
+<span class="old-price">₹499</span>
+
+<span class="new-price">₹249</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Midnight Circle Luxe Bracelet',
+249,
+'images/midnight_circle_luxe_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Midnight Circle Luxe Bracelet',
+249,
+'images/midnight_circle_luxe_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(26)">
+
+<div class="img-box">
+
+<img src="images/curly_glow_rhinestone_bangle_hand.png" class="main-img">
+
+<img src="images/curly_glow_rhinestone_bangle.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Curly Glow Bangle Bracelet | Elegant Twisted Designer Glow Bracelet</h3>
+
+<div class="price">
+
+<span class="old-price">₹500</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Curly Glow Rhinestone Bangle',
+349,
+'images/curly_glow_rhinestone_bangle.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Curly Glow Rhinestone Bangle',
+349,
+'images/curly_glow_rhinestone_bangle.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(27)">
+
+<div class="img-box">
+
+<img src="images/crystal_duo_luxe_kada_hand.png" class="main-img">
+
+<img src="images/crystal_duo_luxe_kada.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Crystal Duo Luxe Kada | Elegant Double Stone Designer Bracelet</h3>
+
+<div class="price">
+
+<span class="old-price">₹499</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Crystal Duo Luxe Kada',
+349,
+'images/crystal_duo_luxe_kada.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Royal Wave Pattern Kada',
+349,
+'images/Crystal Duo Luxe Kada'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(28)">
+
+<div class="img-box">
+
+<img src="images/golden_butterfly_circle_bracelet_hand.png" class="main-img">
+
+<img src="images/golden_butterfly_circle_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Golden Butterfly Circle Bracelet | Premium Crystal Charm Wristwear</h3>
+<div class="price">
+
+<span class="old-price">₹549</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Golden Butterfly Circle Bracelet',
+349,
+'images/golden_butterfly_circle_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Golden Butterfly Circle Bracelet',
+349,
+'images/golden_butterfly_circle_bracelet.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<script src="products.js"></script>
+<script src="index1.js"></script>
+</body>
+</html>

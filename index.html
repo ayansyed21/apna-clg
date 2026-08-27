@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ayeluxe</title>
+
+    <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<!-- Search Overlay -->
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        <img src="image.png" alt="Ayeluxe Logo">
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">All Products</a></li>
+        <li><a href="#">Bracelets</a></li>
+        <li><a href="#">Earrings</a></li>
+        <li><a href="#">Necklace</a></li>
+        <li><a href="#">Premium Collection</a></li>
+        <li><a href="#">Rings</a></li>
+    </ul>
+
+    <div class="nav-icons">
+
+        <!-- Search -->
+        <i class="fa-solid fa-magnifying-glass" id="searchIcon"></i>
+
+        <!-- Cart -->
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div id="searchOverlay" class="search-overlay">
+  <span id="closeSearch">&times;</span>
+
+  <!-- Main Box (Input + Results ek saath) -->
+  <div class="search-card">
+    
+    <!-- Top Search Input -->
+    <div class="search-box-large">
+      <input
+        type="text"
+        id="overlaySearch"
+        placeholder="Search Bracelets, Earrings, Rings..."
+        autocomplete="off"
+      />
+    </div>
+
+    <!-- Bottom Dropdown Results -->
+    <div id="overlayResults" class="overlay-results">
+      <!-- Suggestions (Left) -->
+      <div class="overlay-left">
+        <h3>SUGGESTIONS</h3>
+        <ul id="suggestionList"></ul>
+      </div>
+
+      <!-- Products (Right) -->
+      <div class="overlay-right">
+        <div class="products-header">
+          <h3>PRODUCTS</h3>
+          <span class="offer-tag">BUY 3 GET 1 FREE</span>
+        </div>
+        <div id="productList"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+    <!-- BLACK STRIP -->
+<div class="top-strip">
+
+    <div class="strip-track">
+
+        <span>
+            COD available on orders ₹249 & above
+        </span>
+
+        <span>
+            Buy 3 Get 1 Free
+        </span>
+
+        <span>
+            All India Delivery Available
+        </span>
+
+    </div>
+
+</div>
+</div>
+    <!-- CATEGORY SECTION -->
+
+    <section class="categories">
+
+     <a href="bracelet.html" class="category">
+
+    <img src="images/tory_burch_kira_enamel_bracelet_hand.png" alt="">
+
+    <p>Bracelet</p>
+
+</a>
+
+
+<a href="earrings.html" class="category">
+
+    <img src="images/butterfly_leaf_statement_earrings.png " alt="">
+
+    <p>Earrings</p>
+</a>
+
+
+        <div class="category">
+            <img src="jhumka.jpg">
+            <p>Necklace</p>
+        </div>
+
+        <div class="category">
+            <img src="korean.jpg">
+            <p>Chain Bracelet</p>
+        </div>
+
+        <div class="category">
+            <img src="combo.jpg">
+            <p>Rings</p>
+        </div>
+
+    </section>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+          </div>
+
+    </section>
+
+<!-- BLACK OFFER STRIP -->
+
+<div class="offer-strip">
+
+    <div class="offer-track">
+    <span>Flat ₹100 OFF on orders above ₹699 : FLAT100</span>
+    <span>|</span>
+    <span>COD available on orders ₹249 & above</span>
+    <span>|</span>
+    <span>Flat ₹350 OFF on orders above ₹1999 : FLAT350</span>
+
+    <!-- Repeat for smooth loop -->
+    <span>|</span>
+    <span>Flat ₹100 OFF on orders above ₹699 : FLAT100</span>
+    <span>|</span>
+    <span>COD available on orders ₹249 & above</span>
+    <span>|</span>
+    <span>Flat ₹350 OFF on orders above ₹1999 : FLAT350</span>
+</div>
+</div>
+
+
+
+<!-- TRENDING TITLE -->
+
+<section class="trending-section">
+
+    <h2>
+        Our Trending Collection
+    </h2>
+
+</section>
+  
+<!-- TRENDING PRODUCTS -->
+
+<section class="products">
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="card" onclick="openProduct(15)">
+<div class="img-box">
+<img src="images/anti_tanish_bangle_watch_hand.png" class="main-img">
+<img src="images/anti_tanish_bangle_watch.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3> Anti Tanish Bangle Watch | Premium Waterproof Luxury Watch Bracelet</h3>
+
+
+<div class="price">
+<span class="old-price">₹999</span>
+<span class="new-price">₹599</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+' Anti Tanish Bangle Watch',
+599,
+'images/anti_tanish_bangle_watch.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+' Anti Tanish Bangle Watch',
+599,
+'images/anti_tanish_bangle_watch.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+        <!-- PRODUCT 2 -->
+
+<div class="card" onclick="openProduct(17)">
+
+<div class="img-box">
+
+<img src="images/black_white_circle_bracelet_hand.png" class="main-img">
+
+<img src="images/black_white_circle_bracelet.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Black White Circle Bracelet | Minimal Luxury Couple Style Bracelet(Baby Size)</h3>
+
+<div class="price">
+
+<span class="old-price">₹599</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Black White Circle Bracelet',
+349,
+'images/black_white_circle_bracelet.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Black White Circle Bracelet',
+349,
+'images/black_white_circle_bracelet.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+        <!-- PRODUCT 3 -->
+
+       <div class="card" onclick="openProduct(24)">
+<div class="img-box">
+<img src="images/circle_glow_rhinestone_bangle_hand.png" class="main-img">
+<img src="images/circle_glow_rhinestone_bangle.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+
+<h3>Circle Glow Rhinestone Bangle | Luxury Sparkling Stone Designer Bangle</h3> 
+
+<div class="price">
+<span class="old-price">₹599</span>
+<span class="new-price">₹349</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Circle Glow Rhinestone Bangle',
+349,
+'images/circle_glow_rhinestone_bangle.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Circle Glow Rhinestone Bangle',
+349,
+'images/circle_glow_rhinestone_bangle.png.'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+        <!-- PRODUCT 4 -->
+
+<div class="card" onclick="openProduct(26)">
+
+<div class="img-box">
+
+<img src="images/curly_glow_rhinestone_bangle_hand.png" class="main-img">
+
+<img src="images/curly_glow_rhinestone_bangle.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Curly Glow Bangle Bracelet | Elegant Twisted Designer Glow Bracelet</h3>
+
+<div class="price">
+
+<span class="old-price">₹500</span>
+
+<span class="new-price">₹349</span>
+
+</div>
+
+<div class="card-buttons" onclick="">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Curly Glow Rhinestone Bangle',
+599,
+'images/curly_glow_rhinestone_bangle.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Curly Glow Rhinestone Bangle',
+599,
+'images/curly_glow_rhinestone_bangle.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+</section>
+
+<script src="products.js"></script>
+<script src="index1.js"></script>
+</body>
+</html>

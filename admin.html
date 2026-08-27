@@ -1,0 +1,152 @@
+<!DOCTYPE html><html>
+<head>
+  <title>Admin Panel</title>  <style>
+    body {
+      font-family: Arial;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,255,204,0.2);
+    }
+
+    img {
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+    }
+
+    select, button {
+      padding: 8px;
+      margin-top: 8px;
+      border-radius: 5px;
+    }
+
+    select {
+      background: #222;
+      color: white;
+      border: 1px solid #444;
+    }
+
+    button {
+      background: #00ffcc;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #00ccaa;
+    }
+  </style></head><body><h2>📦 Admin Orders Panel</h2><div id="orders"></div><script>
+
+async function loadOrders() {
+  try {
+    const res = await fetch("http://localhost:3000/all-orders");
+    const data = await res.json();
+
+    let html = "";
+
+    data.forEach(order => {
+console.log(order.image);
+  const date = new Date(order.createdAt).toLocaleString("en-IN", {
+    dateStyle: "medium",
+    timeStyle: "short"
+  });
+
+      html += `
+      <div class="card">
+
+        <img src="images/${order.image}" width="120">
+
+        <p><b>Name:</b> ${order.name}</p>
+        <p><b>Phone:</b> ${order.phone}</p>
+        <p><b>Product:</b> ${order.product}</p>
+        <p><b>Price:</b> ₹${order.price}</p>
+
+        <p><b>Address:</b> ${order.address}, ${order.city}, ${order.state} - ${order.pincode}</p>
+
+        <p><b>Status:</b> ${order.status}</p>
+
+        <p><b>Date:</b> ${date}</p>
+
+        <select id="status-${order._id}">
+          <option ${order.status==="Pending"?"selected":""}>Pending</option>
+          <option ${order.status==="Confirm"?"selected":""}>Confirm</option>
+          <option ${order.status==="Shipped"?"selected":""}>Shipped</option>
+          <option ${order.status==="Delivered"?"selected":""}>Delivered</option>
+        </select>
+
+        <br>
+
+        <button onclick="updateStatus('${order._id}')">Update Status</button>
+
+        <button onclick="deleteOrder('${order._id}')" style="background:red;color:white;margin-top:5px;
+        padding:5px 10px;border:none;border-redius:5px;"> Delete </button>
+
+      </div>
+      `;
+    });
+
+    document.getElementById("orders").innerHTML = html;
+
+  } catch (err) {
+    console.log("Error loading orders:", err);
+  }
+}
+
+
+async function deleteOrder(id) {
+  if (!confirm("Delete this order?")) return;
+
+  try {
+    await fetch("http://localhost:3000/delete-order/" + id, {
+      method: "DELETE"
+    });
+
+    alert("Order Deleted ❌");
+    loadOrders();
+  } catch (err) {
+    console.log(err);
+ 
+  }
+}
+// UPDATE STATUS
+async function updateStatus(id) {
+  const status = document.getElementById("status-" + id).value;
+
+  await fetch("http://localhost:3000/update-order/" + id, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ status })
+  });
+
+  alert("Status Updated ✅");
+  loadOrders();
+}
+
+
+// AUTO LOAD
+
+
+loadOrders();
+
+</script>
+</body>
+</html>

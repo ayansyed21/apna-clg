@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Ayeluxe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #fff; color: #333; }
+        
+        /* AYELUXE BRANDING HEADER */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid #f0f0f0; background: #fff; }
+        .logo { font-size: 26px; font-weight: bold; letter-spacing: 1px; color: #121212; text-decoration: none; }
+        .nav-links a { text-decoration: none; color: #333; margin: 0 20px; font-size: 15px; font-weight: 500; }
+        
+        /* MAIN AREA */
+        .product-main { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: flex; gap: 50px; flex-wrap: wrap; }
+        .product-images { flex: 1.2; min-width: 350px; display: flex; gap: 15px; }
+        .side-thumb { width: 90px; height: 90px; background: #f9f9f9; border-radius: 4px; overflow: hidden; border: 1px solid #eee; }
+        .side-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .main-stage { flex: 1; height: 500px; background: #f9f9f9; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
+        .main-stage img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* DETAILS SIDE */
+        .product-info-box { flex: 1; min-width: 350px; display: flex; flex-direction: column; gap: 20px; }
+        .brand-tag { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #888; }
+        .product-title { font-size: 28px; font-weight: 500; color: #121212; line-height: 1.3; }
+        .price-row { display: flex; align-items: center; gap: 15px; }
+        .product-price { font-size: 24px; font-weight: 600; color: #121212; }
+        .old-price { font-size: 18px; color: #999; text-decoration: line-through; }
+        .sale-badge { background: #ff4665; color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 20px; font-weight: 600; }
+        
+        /* OFFERS */
+        .offers-container { display: flex; gap: 15px; margin: 10px 0; }
+        .offer-box { border: 1px dashed #ccc; padding: 12px; border-radius: 6px; flex: 1; background: #fffcfd; font-size: 13px; }
+        .offer-box strong { color: #ff4665; display: block; margin-bottom: 4px; }
+        
+        /* BUTTONS */
+        .btn-holder { margin-top: 15px; display: flex; flex-direction: column; gap: 12px; }
+        .btn { padding: 15px; font-size: 15px; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; width: 100%; text-align: center; }
+        .btn-dark { background: #181818; color: #fff; }
+        .btn-light { background: #fff; color: #121212; border: 1px solid #121212; }
+        
+        /* DYNAMIC SUGGESTIONS SECTION */
+        .suggestions-section { max-width: 1200px; margin: 80px auto 40px auto; padding: 0 20px; border-top: 1px solid #eee; padding-top: 40px; }
+        .suggestions-header { font-size: 22px; font-weight: 500; margin-bottom: 30px; color: #121212; }
+        .suggestions-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        
+        /* COPIED FROM YOUR BRACELET.HTML FOR 100% STYLE MATCH */
+        .suggest-card { width: calc(25% - 15px); min-width: 220px; cursor: pointer; display: flex; flex-direction: column; }
+        .suggest-img-box { width: 100%; height: 290px; background: #f9f9f9; border-radius: 8px; overflow: hidden; position: relative; }
+        .suggest-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        .suggest-card h4 { font-size: 14px; font-weight: 500; color: #333; margin: 12px 0 6px 0; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .suggest-price-row { font-size: 14px; font-weight: 600; color: #121212; }
+        .suggest-old { font-size: 13px; color: #999; text-decoration: line-through; font-weight: 400; margin-right: 8px; }
+
+        @media (max-width: 768px) { .product-main { flex-direction: column; } .suggest-card { width: calc(50% - 10px); } }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="bracelet.html" class="logo">AYELUXE</a>
+        <div class="nav-links"><a href="bracelet.html">Home</a><a href="bracelet.html">Bracelets</a></div>
+    </div>
+
+    <div class="product-main">
+        <div class="product-images">
+            <div class="display: flex; flex-direction: column; gap: 10px;">
+                <div class="side-thumb"><img id="thumbImg" src="" alt="thumb"></div>
+            </div>
+            <div class="main-stage">
+                <img id="mainProductImg" src="" alt="Main Product Image">
+            </div>
+        </div>
+        
+        <div class="product-info-box">
+            <span class="brand-tag">Ayeluxe Premium</span>
+            <h1 class="product-title" id="mainProductTitle">Loading...</h1>
+            
+            <div class="price-row">
+                <span class="old-price" id="mainOldPrice">₹499</span>
+                <span class="product-price" id="mainProductPrice">₹0</span>
+                <span class="sale-badge">Sale</span>
+            </div>
+
+            <div style="font-size:14px; color:#555;">✨ COD available above ₹249 | (Delivery in 4-6 Days)</div>
+
+            <div class="offers-container">
+                <div class="offer-box"><strong>Buy 3 Get 1 Free</strong>Add 4 items to cart to auto-apply.</div>
+                
+                
+            </div>
+
+            <div class="btn-holder">
+               <button class="btn btn-light"onclick="addToCart(product.name, product.price, product.img)">Add to cart</button>
+
+<button class="btn btn-dark"onclick="buyNowDirect(product.name, product.price, product.img)">Buy it now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="suggestions-section">
+        <h3 class="suggestions-header">You may also like</h3>
+        <div class="suggestions-grid" id="suggestionsGrid"></div>
+    </div>
+
+    <script>
+
+          // --- 100% ACCURATE INVENTORY DATABASE (FIXED) ---
+    // --- 100% VERIFIED LIVE DATABASE (LINE-BY-LINE MATCHED) ---
+    const allProducts = [
+        
+
+        { id: 1, name: "Tory Burch Kira Enamel Bracelet | Luxury Gold Plated Designer Cuff", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/tory_burch_kira_enamel_bracelet.png" },
+        { id: 2, name: "Tree of Life Bangle Bracelet | Elegant Minimal Charm Bracelet", price: "₹299", oldPrice: "₹499", category: "bracelet", img: "images/tree_of_life_bangle_bracelet.png" },
+        { id: 3, name: "Snake Wrap Kada Bracelet | Adjustable Gold Open Cuff", price: "₹299", oldPrice: "₹499", category: "bracelet", img: "images/snake_wrap_kada_bracelet.png" },
+        { id: 4, name: "Roman Numeral Anti Tarnish Bracelet | Premium Stainless Steel Bangle", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/roman_numeral_anti_tarnish_bracelet.png" },
+        { id: 5, name: "Rolex Inspired Lattice Kada | Luxury Gold Textured Bracelet", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/rolex_inspired_lattice_kada.png" },
+        { id: 6, name: "Luxury Roman Numeral Circle Bracelet | Trendy Designer Wristwear", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/luxury_roman_numeral_circle_bracelet.png" },
+        { id: 7, name: "Gold Plated Daisy Flower Open Cuff Bracelet | Korean Style Floral Bangle", price: "₹299", oldPrice: "₹499", category: "bracelet", img: "images/gold_plated_daisy_flower_open_cuff_bracelet.png" },
+        { id: 8, name: "Gold Tone Bangle Watch Design | Elegant Fashion Wrist Bracelet", price: "₹299", oldPrice: "₹449", category: "bracelet", img: "images/gold_tone_bangle_watch_design.png" },
+        { id: 9, name: "Triple Clover Bracelet | Luxury Korean Style Wristwear", price: "₹249", oldPrice: "₹399", category: "bracelet", img: "images/triple_clover_bracelet.png" },
+        { id: 10, name: "Single Black Clover Bracelet | Minimal Elegant Everyday Wear", price: "₹249", oldPrice: "₹399", category: "bracelet", img: "images/single_black_clover_bracelet.png" },
+        { id: 11, name: "Royal Wave Pattern Kada | Premium Textured Designer Kada", price: "₹299", oldPrice: "₹449", category: "bracelet", img: "images/royal_wave_pattern_kada.png" }, 
+        { id: 12, name: "Luxury Roman Clover Kada | Premium Roman Style Luxury Wristwear", price: "₹299", oldPrice: "₹399", category: "bracelet", img: "images/luxury_roman_clover_kada.png" },
+ { id: 13, name: "Luxury Floral Clover Kada | Elegant Floral Inspired Luxury Design", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/luxury_floral_clover_kada.png" },
+{ id: 14, name: "Golden Clover Style Bangle Bracelet | Elegant Korean Style Gold Finish", price: "₹249", oldPrice: "₹399", category: "bracelet", img: "images/golden_clover_style_bangle_bracelet.png" },
+{ id: 15, name: "Anti Tarnish Bangle Watch | Premium Waterproof Luxury Watch Bracelet", price: "₹599", oldPrice: "₹999", category: "bracelet", img: "images/anti_tanish_bangle_watch.png" },
+{ id: 16, name: "Gold Plated Daisy Flower Bracelet | Elegant Floral Korean Style Bracelet", price: "₹299", oldPrice: "₹499", category: "bracelet", img: "images/gold_plated_daisy_flower_bracelet.png" },
+{ id: 17, name: "Black White Circle Bracelet | Minimal Luxury Couple Style (Baby Size)", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/black_white_circle_bracelet.png" },
+{ id: 18, name: "Royal Evil Eye Crystal Kada | Premium Evil Eye Stone Designer Kada", price: "₹249", oldPrice: "₹400", category: "bracelet", img: "images/royal_evil_eye_crystal_kada.png" },
+{ id: 19, name: "Evil Eye Heart Crystal Bracelet | Elegant Crystal Charm Bracelet", price: "₹349", oldPrice: "₹599", category: "bracelet", img: "images/evil_eye_heart_crystal_kada.png" },
+{ id: 20, name: "Dual Clover Elegance Bracelet | Elegant Korean Style Luxury Bracelet", price: "₹249", oldPrice: "₹400", category: "bracelet", img: "images/dual_clover_elegance_bracelet.png" },
+{ id: 21, name: "Double Lined Leaf Kada Bracelet | Elegant Leaf Design Premium Kada", price: "₹349", oldPrice: "₹699", category: "bracelet", img: "images/double_lined_leaf_kada_bracelet.png" },
+{ id: 22, name: "Double Heart Crystal Bracelet | Elegant Couple Style Crystal Bracelet", price: "₹349", oldPrice: "₹500", category: "bracelet", img: "images/double_heart_crystal_bracelet.png" },
+{ id: 23, name: "Curly Rainbow Stone Kada | Colorful Premium Designer Stone Kada", price: "₹299", oldPrice: "₹349", category: "bracelet", img: "images/curly_rainbow_stone_kada.png" },
+{ id: 24, name: "Circle Glow Rhinestone Bangle | Luxury Sparkling Stone Designer Bangle", price: "₹349", oldPrice: "₹599", category: "bracelet", img: "images/circle_glow_rhinestone_bangle.png" },
+{ id: 25, name: "Midnight Circle Luxe Bracelet | Minimal Gold & Black Designer Wristwear", price: "₹249", oldPrice: "₹499", category: "bracelet", img: "images/midnight_circle_luxe_bracelet.png" },
+{ id: 26, name: "Curly Glow Bangle Bracelet | Elegant Twisted Designer Glow Bracelet", price: "₹349", oldPrice: "₹500", category: "bracelet", img: "images/curly_glow_rhinestone_bangle.png" },
+{ id: 27, name: "Crystal Duo Luxe Kada | Elegant Double Stone Designer Bracelet", price: "₹349", oldPrice: "₹499", category: "bracelet", img: "images/crystal_duo_luxe_kada.png" },
+{ id: 28, name: "Golden Butterfly Circle Bracelet | Premium Crystal Charm Wristwear", price: "₹349", oldPrice: "₹549", category: "bracelet", img: "images/golden_butterfly_circle_bracelet.png" },
+
+
+
+{id: 29,name: "Pearl Bloom Flower Stud Earrings | Elegant Floral Luxury",price: "₹149",oldPrice: "₹249",category: "earring",img: "images/pearl_bloom_flower_stud_earrings.png"},
+{ id: 30,name: "Molten Gold Bow Statement Earrings | Chic Designer Collection",price: "₹149",oldPrice: "₹199",category: "earring",img: "images/molten_gold_bow_statement_earrings.png"},
+{
+  id: 31,
+  name: "Gold Twist Open Hoop Earrings | Modern Minimalist Style",
+  price: "₹149",
+  oldPrice: "₹219",
+  category: "earring",
+  img: "images/gold_twist_open_hoop_earrings.png"
+},
+{
+  id: 32,
+  name: "Pearl Daisy Petal Stud Earrings | Korean Floral Elegance",
+  price: "₹129",
+  oldPrice: "₹179",
+  category: "earring",
+  img: "images/pearl_daisy_petal_stud_earrings.png"
+},
+{
+  id: 33,
+  name: "Abstract Spiral Disc Statement Earrings | Contemporary Art Design",
+  price: "₹149",
+  oldPrice: "₹199",
+  category: "earring",
+  img: "images/abstract_spiral_disc_statement_earrings.png"
+},
+{
+  id: 34,
+  name: "Textured Butterfly Drop Earrings | Nature Inspired Glamour",
+  price: "₹199",
+  oldPrice: "₹300",
+  category: "earring",
+  img: "images/textured_butterfly_drop_earrings.png"
+},
+{
+  id: 35,
+  name: "Ripple Gold Fold Earrings | Sculptural Modern Fashion",
+  price: "₹149",
+  oldPrice: "₹199",
+  category: "earring",
+  img: "images/ripple_gold_fold_earrings.png"
+},
+{
+  id: 36,
+  name: "Ocean Starfish Statement Earrings | Coastal Chic Collection",
+  price: "₹149",
+  oldPrice: "₹249",
+  category: "earring",
+  img: "images/ocean_starfish_statement_earrings.png"
+},
+{
+  id: 37,
+  name: "Textured Floral Bloom Earrings | Vintage Garden Elegance",
+  price: "₹199",
+  oldPrice: "₹279",
+  category: "earring",
+  img: "images/textured_floral_bloom_earrings.png"
+},
+{
+  id: 38,
+  name: "Golden Leaf Drop Earrings | Timeless Botanical Beauty",
+  price: "₹149",
+  oldPrice: "₹249",
+  category: "earring",
+  img: "images/golden_leaf_drop_earrings.png"
+},
+{ id: 39, name: "Interlocked Knot Stud Earrings | Modern Minimalist Elegance", price: "₹129", oldPrice: "₹179", category: "earring", img: "images/interlocked_knot_stud_earrings.png" },
+{ id: 40, name: "Crystal Floral Statement Earrings | Sparkling Luxury Design", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/crystal_floral_statement_earrings.png" },
+{ id: 41, name: "Gold Blossom Statement Earrings | Elegant Floral Collection", price: "₹149", oldPrice: "₹249", category: "earring", img: "images/gold_blossom_statement_earrings.png" },
+{ id: 42, name: "Geometric Bar Cuff Earrings | Contemporary Chic Style", price: "₹129", oldPrice: "₹179", category: "earring", img: "images/geometric_bar_cuff_earrings.png" },
+{ id: 43, name: "Organic Hook Statement Earrings | Artistic Modern Jewelry", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/organic_hook_statement_earrings.png" },
+{ id: 44, name: "Pleated Flower Statement Earrings | Timeless Botanical Beauty", price: "₹199", oldPrice: "₹349", category: "earring", img: "images/pleated_flower_statement_earrings.png" },
+{ id: 45, name: "Textured Teardrop Stud Earrings | Sophisticated Everyday Wear", price: "₹129", oldPrice: "₹179", category: "earring", img: "images/textured_teardrop_stud_earrings.png" },
+{ id: 46, name: "Vintage Bow Drop Earrings | Feminine Classic Charm", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/vintage_bow_drop_earrings.png" },
+{ id: 47, name: "Butterfly Leaf Statement Earrings | Nature Inspired Elegance", price: "₹199", oldPrice: "₹249", category: "earring", img: "images/butterfly_leaf_statement_earrings.png" },
+{ id: 48, name: "Abstract Molten Gold Earrings | Bold Sculptural Fashion", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/abstract_molten_gold_earrings.png" },
+{ id: 49, name: "Crystal Blossom Flower Earrings | Radiant Floral Elegance", price: "₹199", oldPrice: "₹269", category: "earring", img: "images/crystal_blossom_flower_earrings.png" },
+{ id: 50, name: "Melting Heart Drop Earrings | Romantic Contemporary Design", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/melting_heart_drop_earrings.png" },
+{ id: 51, name: "Butterfly Orchid Dangle Earrings | Graceful Nature Inspired Style", price: "₹199", oldPrice: "₹299", category: "earring", img: "images/butterfly_orchid_dangle_earrings.png" },
+{ id: 52, name: "Golden Tulip Drop Earrings | Timeless Floral Luxury", price: "₹199", oldPrice: "₹249", category: "earring", img: "images/golden_tulip_drop_earrings.png" },
+{ id: 53, name: "Seashell Fan Stud Earrings | Coastal Chic Collection", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/seashell_fan_stud_earrings.png" },
+{ id: 54, name: "Twisted Petal Flower Earrings | Artistic Bloom Design", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/twisted_petal_flower_earrings.png" },
+{ id: 55, name: "Layered Leaf Statement Earrings | Botanical Glamour Edition", price: "₹149", oldPrice: "₹199", category: "earring", img: "images/layered_leaf_statement_earrings.png" },
+{ id: 56, name: "Textured Bloom Petal Earrings | Elegant Garden Collection", price: "₹129", oldPrice: "₹179", category: "earring", img: "images/textured_bloom_petal_earrings.png" },
+{ id: 57, name: "Dripping Heart Statement Earrings | Bold Modern Romance", price: "₹199", oldPrice: "₹249", category: "earring", img: "images/dripping_heart_statement_earrings.png" },
+    ];
+        // URL parsing to find active ID
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentId = parseInt(urlParams.get('id')) || 1;
+
+        // Find the clicked item
+        const product = allProducts.find(p => p.id === currentId);
+ 
+        if(product) {
+            // Render details on top
+            document.getElementById('mainProductImg').src = product.img;
+            document.getElementById('thumbImg').src = product.img;
+            document.getElementById('mainProductTitle').innerText = product.name;
+            document.getElementById('mainProductPrice').innerText = product.price;
+            document.getElementById('mainOldPrice').innerText = product.oldPrice;
+            document.title = product.name + " - Ayeluxe";
+
+            // FILTER RELEVANT SUGGESTIONS (Exclude the active product itself!)
+            let related = allProducts.filter(p => p.category === product.category && p.id !== product.id);
+
+            // Shuffling suggestions to make it look unique each time
+            related.sort(() => 0.5 - Math.random());
+
+            const grid = document.getElementById('suggestionsGrid');
+            // Show top 4 items in grid
+            related.slice(0, 4).forEach(item => {
+                grid.innerHTML += `
+                    <div class="suggest-card" onclick="window.location.href='product.html?id=${item.id}'">
+                        <div class="suggest-img-box">
+                            <img src="${item.img}" alt="${item.name}">
+                        </div>
+                        <h4>${item.name}</h4>
+                        <div class="suggest-price-row">
+                            <span class="suggest-old">${item.oldPrice}</span>
+                            <span>${item.price}</span>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+
+        function addToCart(name, price, image) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+        name: name,
+        price: price,
+        image: image
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Added To Cart");
+}
+
+function buyNowDirect(name, price, image) {
+
+    localStorage.setItem("buyNowItem", JSON.stringify({
+        name: name,
+        price: price,
+        image: image
+    }));
+
+    window.location.href = "checkout.html";
+}
+    </script>
+</body>
+</html>

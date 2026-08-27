@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details</title>
+</head>
+
+<body>
+
+  <h1>Product Details</h1>
+
+  <div class="pro1">
+
+    <!-- IMAGE -->
+    <img id="product-img" width="250">
+
+
+<p>his exquisite gold necklace is designed to embody timeless elegance and refined beauty. <br>
+Crafted with precision and finished to perfection, it adds a touch of luxury to every outfit. <br>
+Whether for a special occasion or everyday sophistication, this piece effortlessly enhances your style.
+</p>
+    <!-- PRICE -->
+
+
+
+    <!-- NAME -->
+    <h2 id="product-name"></h2>
+
+    <!-- PRICE -->
+    <p id="product-price"></p>
+
+    <!-- ADD TO CART -->
+    <button onclick="addToCartFromDetail()">Add to Cart</button>
+
+     <button onclick="buyNowDirect(name,price,img)"> Buy Now</button>
+
+  </div>
+
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+const price = Number (params.get("price"));
+const img = params.get("img");
+
+if(name && price && img){
+  document.getElementById("product-name").innerText = name;
+  document.getElementById("product-price").innerText = "₹" + price;
+  document.getElementById("product-img").src = "images/" + img;
+}else{
+    document.getElementById("product-name").innerText="Product not found";
+}
+</script>
+  <script src="index1.js"></script>
+</body>
+</html>

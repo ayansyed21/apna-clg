@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayeluxe Payment</title>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Poppins,sans-serif}
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#111,#222);
+padding:20px;
+}
+.box{
+width:100%;
+max-width:430px;
+background:#fff;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+h2{
+text-align:center;
+margin-bottom:8px;
+color:#d4af37;
+}
+.sub{
+text-align:center;
+margin-bottom:25px;
+color:#666;
+}
+.option{
+border:2px solid #ddd;
+padding:16px;
+border-radius:16px;
+margin-bottom:15px;
+cursor:pointer;
+transition:.3s;
+}
+.option:hover,.active{
+border-color:#d4af37;
+background:#fffaf0;
+}
+button{
+width:100%;
+padding:16px;
+border:none;
+border-radius:40px;
+background:#d4af37;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+margin-top:18px;
+}
+#codNote{
+display:none;
+margin-top:14px;
+text-align:center;
+color:green;
+font-weight:600;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Payment Method</h2>
+<p class="sub">Total Amount: ₹  <span id="showAmount"></span></p>
+
+<div id="online" class="option active">
+💳 Pay Online (UPI / Cards / Netbanking)
+</div>
+
+<div id="cod" class="option">
+📦 Cash On Delivery
+</div>
+
+<button  onclick="window.location.href='success.html' "  id="payBtn">Place Order</button>
+<p id="codNote">Order Placed Successfully (COD) ✅</p>
+</div>
+
+<script>
+let paymentMode = 'online';
+
+// Storage se updated pricing details read karo
+const cartTotal = localStorage.getItem("totalPrice");
+const product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+// Pure dynamic price calculation
+let total = 0;
+if (cartTotal && Number(cartTotal) > 0) {
+    total = Number(cartTotal);
+} else if (product && product.price) {
+    total = Number(product.price);
+}
+
+// Total amount update karo UI par
+const showAmtElem = document.getElementById("showAmount");
+if (showAmtElem) {
+    showAmtElem.innerText = total;
+}
+const online=document.getElementById('online');
+const cod=document.getElementById('cod');
+
+online.onclick=()=>{
+paymentMode='online';
+online.classList.add('active');
+cod.classList.remove('active');
+}
+
+cod.onclick=()=>{
+paymentMode='cod';
+cod.classList.add('active');
+online.classList.remove('active');
+}
+
+document.getElementById('payBtn').onclick=function(){
+
+if(paymentMode==='cod'){
+window.location.href='success.html';
+return;
+}
+
+var options={
+key:'rzp_test_Sip5HUD3xTDXV3',
+amount: total * 100,
+currency:'INR',
+name:'Ayeluxe',
+description:'Jewellery Order',
+handler:function(response){
+window.location.href='success.html';
+},
+prefill:{
+name:'Customer',
+email:'customer@email.com',
+contact:'9999999999'
+},
+theme:{
+color:'#d4af37'
+}
+};
+
+var rzp=new Razorpay(options);
+rzp.open();
+}
+</script>
+
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

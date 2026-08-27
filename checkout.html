@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayeluxe Checkout</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1f2e, #2c2c54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #ccc;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.error-input {
+  border: 1px solid red !important;
+}
+
+.error-text {
+  font-size: 11px;
+  color: #ff4d4d;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(45deg, #00ffcc, #00ccff);
+  color: black;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Ayeluxe Checkout</h2>
+
+<h3 id="product-name"></h3>
+<p id="product-price"></p>
+
+
+  <div class="input-group">
+    <label>Full Name</label>
+    <input id="name">
+  </div>
+
+  <div class="input-group">
+    <label>Phone</label>
+    <input id="phone">
+    <div id="phoneError" class="error-text"></div>
+  </div>
+
+  <div class="input-group">
+    <label>Address</label>
+    <input id="address">
+  </div>
+
+  <div class="input-group">
+    <label>Pincode</label>
+    <input id="pincode" maxlength="6">
+    <div id="pinError" class="error-text"></div>
+  </div>
+
+  <div class="input-group">
+    <label>City</label>
+    <input id="city">
+  </div>
+
+  <div class="input-group">
+    <label>State</label>
+    <input id="state">
+  </div>
+
+  <button type="button" onclick="goPayment()">Proceed to Payment</button>
+</div>
+
+<script>
+
+// ✅ VALIDATION FUNCTION
+function validateField(input, condition, errorId, message) {
+  let error = document.getElementById(errorId);
+
+  if (!condition) {
+    input.classList.add("error-input");
+    error.innerText = message;
+    return false;
+  } else {
+    input.classList.remove("error-input");
+    error.innerText = "";
+    return true;
+  }
+}
+
+// ✅ PHONE VALIDATION
+document.getElementById("phone").addEventListener("input", function () {
+  validateField(
+    this,
+    /^[6-9]\d{9}$/.test(this.value),
+    "phoneError",
+    "Enter valid 10-digit number"
+  );
+});
+
+// ✅ PINCODE AUTO CITY STATE (UNCHANGED 🔥)
+document.getElementById("pincode").addEventListener("input", function () {
+
+  let pin = this.value;
+
+  let valid = validateField(
+    this,
+    /^\d{6}$/.test(pin),
+    "pinError",
+    "Enter valid 6-digit pincode"
+  );
+
+  if (valid) {
+    fetch(`https://api.postalpincode.in/pincode/${pin}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data[0].Status === "Success") {
+          let post = data[0].PostOffice[0];
+          document.getElementById("city").value = post.District;
+          document.getElementById("state").value = post.State;
+        }
+      });
+  }
+});
+
+// ✅ MAIN FUNCTION
+function goPayment() {
+
+  let name = document.getElementById("name");
+  let phone = document.getElementById("phone");
+  let pin = document.getElementById("pincode");
+
+  let valid = true;
+
+  if (!name.value) {
+    name.classList.add("error-input");
+    valid = false;
+  }
+
+  if (!/^[6-9]\d{9}$/.test(phone.value)) {
+    valid = false;
+  }
+
+  if (!/^\d{6}$/.test(pin.value)) {
+    valid = false;
+  }
+
+  if (!valid) return;
+
+
+
+// ✅ page load pe run hoga
+let cartTotal = localStorage.getItem("totalPrice");
+let item = JSON.parse(localStorage.getItem("selectedProduct"));
+
+console.log("Selected Product:", item);
+
+if(cartTotal){
+document.getElementById("product-name").innerText = "Cart Order";
+document.getElementById("product-price").innerText = "₹" + cartTotal;
+}
+  else if (item){
+
+    document.getElementById("product-name").innerText = item.name;
+    document.getElementById("product-price").innerText = "₹" + item.price;
+  }
+
+
+// 🔽 ab tera function
+function goPayment() {
+}
+
+
+
+  fetch("http://localhost:3000/order", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: name.value,
+      phone: phone.value,
+      address: document.getElementById("address").value,
+      pincode: document.getElementById("pincode").value,
+      city: document.getElementById("city").value,
+      state: document.getElementById("state").value,
+      product: item.name,
+      price: item.price,
+      quantity: 1,
+      image: item.image
+    })
+  })
+  .then(res => res.json())
+  .then(data => {
+  
+    window.location.href = "payment.html";
+  })
+  .catch(err => {
+    alert("Error saving order ❌");
+    console.log(err);
+  });
+
+}
+
+</script>
+
+</body>
+</html>

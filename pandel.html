@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product <details></details></title>
+</head>
+<body>
+    
+<h1>Product detail</h1>
+
+<div class="pro1">
+
+<img id="product-img" width="250" alt="">
+
+<p>Delicate, modern, and effortlessly graceful, this minimal pendant adds a subtle touch of <br>sophistication to any look. <br> Perfect for those who love understated elegance. 💎</p>
+
+
+<h2 id="product-name"></h2>
+
+<p id="product-price"></p>
+ 
+</div>
+
+
+<button onclick="addToCartFromDetail()">Add to cart</button>
+
+ <button onclick="buyNow()"> Buy Now</button>
+
+
+ <script>
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+const price = params.get("price");
+const img = params.get("img");
+
+if(name && price && img){
+  document.getElementById("product-name").innerText = name;
+  document.getElementById("product-price").innerText = "₹" + price;
+  document.getElementById("product-img").src = "images/" + img;
+}else{
+    document.getElementById("product-name").innerText="Product not found";
+}
+</script>
+<script src="index1.js"></script>
+</body>
+</html>

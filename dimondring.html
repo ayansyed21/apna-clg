@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Product details</h2>
+
+<div class="pro1">
+
+    <img id="product-img" width="250" alt="">
+
+    <p>Crafted to symbolize elegance and everlasting beauty,<br> this diamond ring shines with refined brilliance. <br> A timeless piece perfect for special moments and everyday luxury. ✨</p>
+
+    <h2 id="product-name"></h2>
+
+    <p id="product-price"></p>
+</div>
+
+<button onclick="AddToCartFromDetail()"> Add to cart</button>
+
+ <button onclick="buyNowdDirect()"> Buy Now</button>
+
+
+
+ <script>
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+const price = params.get("price");
+const img = params.get("img");
+
+if(name && price && img){
+  document.getElementById("product-name").innerText = name;
+  document.getElementById("product-price").innerText = "₹" + price;
+  document.getElementById("product-img").src = "images/" + img;
+}else{
+    document.getElementById("product-name").innerText="Product not found";
+}
+</script>
+<script src="index1.js"></script>
+</body>
+</html>

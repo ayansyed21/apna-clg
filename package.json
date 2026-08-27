@@ -1,0 +1,16 @@
+{
+  "name": "apna-clg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index1.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+
+  "dependencies": {
+    "cors": "^2.8.6",
+    "firebase": "^12.12.1",
+    "mongoose": "^9.5.0",
+    "razorpay": "^2.9.6"
+  }
+}

@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayeluxe Products</title>
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+
+body{
+    margin:0;
+      font-family: 'Poppins',sans-serif;
+    background:#f7f7f7;
+}
+
+
+
+
+/* PRODUCTS */
+
+.products{
+    padding:30px 20px;
+}
+
+/* GRID */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* IMAGE */
+
+.img-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.img-box img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+    transition:0.4s;
+}
+
+.hover-img{
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+}
+
+.card:hover .hover-img{
+    opacity:1;
+}
+
+.card:hover .main-img{
+    opacity:0;
+}
+
+/* SALE */
+
+.sale-tag{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:#ef5f6f;
+    color:white;
+    padding:6px 12px;
+    font-size:12px;
+    font-weight:600;
+    border-radius:4px;
+}
+
+/* TITLE */
+
+.card h3{
+    font-size:14px;
+    padding:14px 14px 5px;
+    color:#333;
+    line-height:1.4;
+}
+
+/* PRICE */
+
+.price{
+    padding:0 14px 14px;
+}
+
+.old-price{
+    color:#d98a94;
+    text-decoration:line-through;
+    margin-right:8px;
+    font-size:16px;
+}
+
+.new-price{
+    font-size:18px;
+    font-weight:700;
+}
+
+/* BUTTONS */
+
+.card-buttons{
+    display:flex;
+    gap:8px;
+    padding:0 14px 18px;
+}
+
+.cart-btn,
+.buy-btn{
+    flex:1;
+    height:42px;
+    border:none;
+    border-radius:25px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cart-btn{
+    background:#ef9fb0;
+    color:white;
+}
+
+.cart-btn:hover{
+    background:#e88bb0;
+}
+
+.buy-btn{
+    background:black;
+    color:white;
+}
+
+.buy-btn:hover{
+    background:#e78ea1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.img-box img{
+    height:240px;
+}
+
+.card h3{
+    font-size:15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333;
+    margin: 12px 14px 18px;
+    min-height: 48px;
+    letter-spacing: 0.2px;
+}
+
+.card{
+    background:#fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.old-price{
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+.new-price{
+    font-size:16px;
+    font-weight: 500;
+    color: #111;
+}
+
+
+.card-buttons{
+    flex-direction:column;
+}
+
+.cart-btn,
+.buy-btn{
+font-weight: 500;
+    font-size:14px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<section class="products">
+
+<div class="product-grid">
+
+
+
+<!-- CARD 1 -->
+
+<div class="card" onclick="openProduct(29)">
+
+<div class="img-box">
+
+<img src="images/pearl_bloom_flower_stud_earrings_ear.png" class="main-img">
+
+<img src="images/pearl_bloom_flower_stud_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Pearl Bloom Flower Stud Earrings | Elegant Floral Luxury</h3>
+
+<div class="price">
+
+<span class="old-price">249</span>
+
+<span class="new-price">149</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Pearl Bloom Flower Stud Earrings | Elegant Floral Luxury',
+149,
+'images/pearl_bloom_flower_stud_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Pearl Bloom Flower Stud Earrings | Elegant Floral Luxury',
+149,
+'images/pearl_bloom_flower_stud_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(30)">
+
+<div class="img-box">
+
+<img src="images/molten_gold_bow_statement_earrings_ear.png" class="main-img">
+
+<img src="images/molten_gold_bow_statement_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Molten Gold Bow Statement Earrings | Chic Designer Collection</h3>
+
+<div class="price">
+
+<span class="old-price">₹199</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Molten Gold Bow Statement Earrings | Chic Designer Collection',
+149,
+'images/molten_gold_bow_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Molten Gold Bow Statement Earrings | Chic Designer Collections',
+149,
+'images/molten_gold_bow_statement_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(31)">
+
+<div class="img-box">
+
+<img src="images/gold_twist_open_hoop_earrings_ear.png" class="main-img">
+
+<img src="images/gold_twist_open_hoop_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Gold Twist Open Hoop Earrings | Modern Minimalist Style</h3>
+
+<div class="price">
+
+<span class="old-price">₹219</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Gold Twist Open Hoop Earrings | Modern Minimalist Style',
+149,
+'images/gold_twist_open_hoop_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Gold Twist Open Hoop Earrings | Modern Minimalist Style',
+149,
+'images/gold_twist_open_hoop_earrings.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(32)">
+
+<div class="img-box">
+
+<img src="images/pearl_daisy_petal_stud_earrings_ear.png" class="main-img">
+
+<img src="images/pearl_daisy_petal_stud_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Pearl Daisy Petal Stud Earrings | Korean Floral Elegance</h3>
+<div class="price">
+
+<span class="old-price">₹179</span>
+
+<span class="new-price">₹129</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Pearl Daisy Petal Stud Earrings | Korean Floral Elegance',
+129,
+'images/pearl_daisy_petal_stud_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Pearl Daisy Petal Stud Earrings | Korean Floral Elegance',
+129,
+'images/pearl_daisy_petal_stud_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+
+
+<!-- CARD 5 -->
+<div class="card" onclick="openProduct(33)">
+
+<div class="img-box">
+<img src="images/abstract_spiral_disc_statement_earrings_ear.png" class="main-img">
+<img src="images/abstract_spiral_disc_statement_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Abstract Spiral Disc Statement Earrings | Contemporary Art Design</h3>
+
+<div class="price">
+<span class="old-price">₹199</span>
+<span class="new-price">₹149</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Abstract Spiral Disc Statement Earrings | Contemporary Art Design',
+149,
+'images/abstract_spiral_disc_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Abstract Spiral Disc Statement Earrings | Contemporary Art Design',
+149,
+'images/abstract_spiral_disc_statement_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+
+<!-- CARD 6 -->
+<div class="card" onclick="openProduct(34)">
+<div class="img-box">
+<img src="images/textured_butterfly_drop_earrings_ear.png" class="main-img">
+<img src="images/textured_butterfly_drop_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Textured Butterfly Drop Earrings | Nature Inspired Glamour</h3>
+
+
+<div class="price">
+<span class="old-price">₹300</span>
+<span class="new-price">₹199</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Textured Butterfly Drop Earrings | Nature Inspired Glamour',
+199,
+'images/textured_butterfly_drop_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Textured Butterfly Drop Earrings | Nature Inspired Glamour',
+199,
+'images/textured_butterfly_drop_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 7 -->
+<div class="card" onclick="openProduct(35)">
+<div class="img-box">
+<img src="images/ripple_gold_fold_earrings_ear.png" class="main-img">
+<img src="images/ripple_gold_fold_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Ripple Gold Fold Earrings | Sculptural Modern Fashion</h3>
+
+
+<div class="price">
+<span class="old-price">₹199</span>
+<span class="new-price">₹149</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Ripple Gold Fold Earrings | Sculptural Modern Fashion',
+149,
+'images/ripple_gold_fold_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Ripple Gold Fold Earrings | Sculptural Modern Fashion',
+149,
+'images/ripple_gold_fold_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 8 -->
+<div class="card" onclick="openProduct(36)">
+<div class="img-box">
+<img src="images/ocean_starfish_statement_earrings_ear.png" class="main-img">
+<img src="images/ocean_starfish_statement_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Ocean Starfish Statement Earrings | Coastal Chic Collection</h3>
+
+<div class="price">
+<span class="old-price">₹249</span>
+<span class="new-price">₹149</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Ocean Starfish Statement Earrings | Coastal Chic Collection',
+149,
+'images/ocean_starfish_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Ocean Starfish Statement Earrings | Coastal Chic Collection',
+149,
+'images/ocean_starfish_statement_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+<!--9 TO 16-->
+
+
+
+<div class="card" onclick="openProduct(37)">
+
+<div class="img-box">
+
+<img src="images/textured_floral_bloom_earrings_ear.png" class="main-img">
+
+<img src="images/textured_floral_bloom_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Textured Floral Bloom Earrings | Vintage Garden Elegance</h3>
+
+<div class="price">
+
+<span class="old-price">₹279</span>
+
+<span class="new-price">₹199</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Textured Floral Bloom Earrings | Vintage Garden Elegance',
+199,
+'images/textured_floral_bloom_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Textured Floral Bloom Earrings | Vintage Garden Elegance',
+199,
+'images/textured_floral_bloom_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(38)">
+
+<div class="img-box">
+
+<img src="images/golden_leaf_drop_earrings_ear.png" class="main-img">
+
+<img src="images/golden_leaf_drop_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Golden Leaf Drop Earrings | Timeless Botanical Beauty</h3>
+
+<div class="price">
+
+<span class="old-price">₹249</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Golden Leaf Drop Earrings | Timeless Botanical Beauty',
+149,
+'images/golden_leaf_drop_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Golden Leaf Drop Earrings | Timeless Botanical Beauty',
+149,
+'images/golden_leaf_drop_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(39)">
+
+<div class="img-box">
+
+<img src="images/interlocked_knot_stud_earrings_ear.png" class="main-img">
+
+<img src="images/interlocked_knot_stud_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Interlocked Knot Stud Earrings | Modern Minimalist Elegance</h3>
+
+<div class="price">
+
+<span class="old-price">₹179</span>
+
+<span class="new-price">₹129</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Interlocked Knot Stud Earrings | Modern Minimalist Elegance',
+129,
+'images/interlocked_knot_stud_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Interlocked Knot Stud Earrings | Modern Minimalist Elegance',
+129,
+'images/interlocked_knot_stud_earrings.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(40)">
+
+<div class="img-box">
+
+<img src="images/crystal_floral_statement_earrings_ear.png" class="main-img">
+
+<img src="images/crystal_floral_statement_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Crystal Floral Statement Earrings | Sparkling Luxury Design</h3>
+<div class="price">
+
+<span class="old-price">₹199</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Crystal Floral Statement Earrings | Sparkling Luxury Design',
+149,
+'images/crystal_floral_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Crystal Floral Statement Earrings | Sparkling Luxury Design',
+149,
+'images/crystal_floral_statement_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+
+
+<!-- CARD 5 -->
+<div class="card" onclick="openProduct(41)">
+<div class="img-box">
+<img src="images/crystal_blossom_flower_earrings_ear.png" class="main-img">
+<img src="images/crystal_blossom_flower_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Crystal Blossom Flower Earrings | Radiant Floral Elegance
+</h3>
+
+<div class="price">
+<span class="old-price">₹269</span>
+<span class="new-price">₹199</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Crystal Blossom Flower Earrings | Radiant Floral Elegance',
+199,
+'images/crystal_blossom_flower_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Crystal Blossom Flower Earrings | Radiant Floral Elegance',
+199,
+'images/crystal_blossom_flower_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+
+<!-- CARD 6 -->
+<div class="card" onclick="openProduct(42)">
+<div class="img-box">
+<img src="images/gold_blossom_statement_earrings_ear.png" class="main-img">
+<img src="images/gold_blossom_statement_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Gold Blossom Statement Earrings | Elegant Floral Collection </h3>
+
+
+<div class="price">
+<span class="old-price">₹249</span>
+<span class="new-price">₹149</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Gold Blossom Statement Earrings | Elegant Floral Collection ',
+149,
+'images/gold_blossom_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Gold Blossom Statement Earrings | Elegant Floral Collection ',
+149,
+'images/gold_blossom_statement_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 7 -->
+<div class="card" onclick="openProduct(43)">
+<div class="img-box">
+<img src="images/geometric_bar_cuff_earrings_ear.png" class="main-img">
+<img src="images/geometric_bar_cuff_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Geometric Bar Cuff Earrings | Contemporary Chic Style</h3>
+
+
+<div class="price">
+<span class="old-price">₹179</span>
+<span class="new-price">₹129</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+' Geometric Bar Cuff Earrings | Contemporary Chic Style',
+129,
+'images/geometric_bar_cuff_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+' Geometric Bar Cuff Earrings | Contemporary Chic Style',
+129,
+'images/geometric_bar_cuff_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 8 -->
+<div class="card" onclick="openProduct(44)">
+<div class="img-box">
+<img src="images/organic_hook_statement_earrings_ear.png" class="main-img">
+<img src="images/organic_hook_statement_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>
+Organic Hook Statement Earrings | Artistic Modern Jewelry</h3>
+
+<div class="price">
+<span class="old-price">₹199</span>
+<span class="new-price">₹149</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Organic Hook Statement Earrings | Artistic Modern Jewelry',
+149,
+'images/organic_hook_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Organic Hook Statement Earrings | Artistic Modern Jewelry',
+149,
+'images/organic_hook_statement_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+<!--16 TO 28-->
+
+
+<div class="card" onclick="openProduct(45)">
+
+<div class="img-box">
+
+<img src="images/pleated_flower_statement_earrings_ear.png" class="main-img">
+
+<img src="images/pleated_flower_statement_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Pleated Flower Statement Earrings | Timeless Botanical Beauty</h3>
+
+<div class="price">
+
+<span class="old-price">₹349</span>
+
+<span class="new-price">₹199</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Pleated Flower Statement Earrings | Timeless Botanical Beauty',
+199,
+'images/pleated_flower_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Pleated Flower Statement Earrings | Timeless Botanical Beauty',
+199,
+'images/pleated_flower_statement_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(46)">
+
+<div class="img-box">
+
+<img src="images/textured_teardrop_stud_earrings_ear.png" class="main-img">
+
+<img src="images/textured_teardrop_stud_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Textured Teardrop Stud Earrings | Sophisticated Everyday Wear</h3>
+
+<div class="price">
+
+<span class="old-price">₹179</span>
+
+<span class="new-price">₹129</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Textured Teardrop Stud Earrings | Sophisticated Everyday Wear ',
+129,
+'images/textured_teardrop_stud_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Textured Teardrop Stud Earrings | Sophisticated Everyday Wear ',
+129,
+'images/textured_teardrop_stud_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(47)">
+
+<div class="img-box">
+
+<img src="images/vintage_bow_drop_earrings_ear.png" class="main-img">
+
+<img src="images/vintage_bow_drop_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Vintage Bow Drop Earrings | Feminine Classic Charm</h3>
+
+<div class="price">
+
+<span class="old-price">₹199</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Vintage Bow Drop Earrings | Feminine Classic Charm',
+149,
+'images/vintage_bow_drop_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Vintage Bow Drop Earrings | Feminine Classic Charm',
+149,
+'images/vintage_bow_drop_earrings.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(48)">
+
+<div class="img-box">
+
+<img src="images/butterfly_leaf_statement_earrings_ear.png" class="main-img">
+
+<img src="images/butterfly_leaf_statement_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Butterfly Leaf Statement Earrings | Nature Inspired Elegance</h3>
+<div class="price">
+
+<span class="old-price">₹249</span>
+
+<span class="new-price">₹199</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Butterfly Leaf Statement Earrings | Nature Inspired Elegance',
+199,
+'images/butterfly_leaf_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Butterfly Leaf Statement Earrings | Nature Inspired Elegance',
+199,
+'images/butterfly_leaf_statement_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+
+
+<!-- CARD 5 -->
+<div class="card" onclick="openProduct(49)">
+<div class="img-box">
+<img src="images/abstract_molten_gold_earrings_ear.png" class="main-img">
+<img src="images/abstract_molten_gold_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Abstract Molten Gold Earrings | Bold Sculptural Fashion</h3>
+
+<div class="price">
+<span class="old-price">₹189</span>
+<span class="new-price">₹129</span>
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Abstract Molten Gold Earrings | Bold Sculptural Fashion',
+129,
+'images/abstract_molten_gold_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Abstract Molten Gold Earrings | Bold Sculptural Fashion',
+129,
+'images/abstract_molten_gold_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+
+<!-- CARD 6 -->
+<div class="card" onclick="openProduct(50)">
+<div class="img-box">
+<img src="images/melting_heart_drop_earrings_ear.png" class="main-img">
+<img src="images/melting_heart_drop_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Melting Heart Drop Earrings | Romantic Contemporary Design</h3>
+
+
+<div class="price">
+<span class="old-price">₹199</span>
+<span class="new-price">₹149</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Melting Heart Drop Earrings | Romantic Contemporary Design',
+149,
+'images/melting_heart_drop_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Melting Heart Drop Earrings | Romantic Contemporary Design',
+149,
+'images/melting_heart_drop_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 7 -->
+<div class="card" onclick="openProduct(51)">
+<div class="img-box">
+<img src="images/butterfly_orchid_dangle_earrings_ear.png" class="main-img">
+<img src="images/butterfly_orchid_dangle_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Butterfly Orchid Dangle Earrings | Graceful Nature Inspired Style</h3>
+
+
+<div class="price">
+<span class="old-price">₹299</span>
+<span class="new-price">₹199</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Butterfly Orchid Dangle Earrings | Graceful Nature Inspired Style',
+199,
+'images/butterfly_orchid_dangle_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Butterfly Orchid Dangle Earrings | Graceful Nature Inspired Style',
+199,
+'images/butterfly_orchid_dangle_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+
+
+<!-- CARD 8 -->
+<div class="card" onclick="openProduct(52)">
+<div class="img-box">
+<img src="images/golden_tulip_drop_earrings_ear.png" class="main-img">
+<img src="images/golden_tulip_drop_earrings.png" class="hover-img">
+<span class="sale-tag">BUY 3 GET 1 FREE</span>
+</div>
+
+<h3>Golden Tulip Drop Earrings | Timeless Floral Luxury</h3>
+
+<div class="price">
+<span class="old-price">₹249</span>
+<span class="new-price">₹199</span>
+</div>
+
+<div class="card-buttons">
+<button class="cart-btn"
+onclick="addToCart(
+'Golden Tulip Drop Earrings | Timeless Floral Luxury',
+199,
+'images/golden_tulip_drop_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Golden Tulip Drop Earrings | Timeless Floral Luxury',
+199,
+'images/golden_tulip_drop_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+</div>
+
+
+<!--LAST 4-->
+
+
+
+<div class="card" onclick="openProduct(53)">
+
+<div class="img-box">
+
+<img src="images/seashell_fan_stud_earrings_ear.png" class="main-img">
+
+<img src="images/seashell_fan_stud_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Seashell Fan Stud Earrings | Coastal Chic Collection</h3>
+
+<div class="price">
+
+<span class="old-price">₹199</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Seashell Fan Stud Earrings | Coastal Chic Collection',
+149,
+'images/seashell_fan_stud_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Seashell Fan Stud Earrings | Coastal Chic Collection',
+149,
+'images/seashell_fan_stud_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(54)">
+
+<div class="img-box">
+
+<img src="images/twisted_petal_flower_earrings_ear.png" class="main-img">
+
+<img src="images/twisted_petal_flower_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Twisted Petal Flower Earrings | Artistic Bloom Design</h3>
+
+<div class="price">
+
+<span class="old-price">₹199</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Twisted Petal Flower Earrings | Artistic Bloom Design',
+149,
+'images/twisted_petal_flower_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Twisted Petal Flower Earrings | Artistic Bloom Design',
+149,
+'images/twisted_petal_flower_earrings.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 3 -->
+
+<div class="card" onclick="openProduct(55)">
+
+<div class="img-box">
+
+<img src="images/layered_leaf_statement_earrings_ear.png" class="main-img">
+
+<img src="images/layered_leaf_statement_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Layered Leaf Statement Earrings | Botanical Glamour Edition</h3>
+
+<div class="price">
+
+<span class="old-price">₹199</span>
+
+<span class="new-price">₹149</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Layered Leaf Statement Earrings | Botanical Glamour Edition',
+149,
+'images/layered_leaf_statement_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Layered Leaf Statement Earrings | Botanical Glamour Edition',
+149,
+'images/layered_leaf_statement_earrings.png'
+)">
+Buy Now
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- CARD 4 -->
+
+<div class="card" onclick="openProduct(56)">
+
+<div class="img-box">
+
+<img src="images/textured_bloom_petal_earrings_ear.png" class="main-img">
+
+<img src="images/textured_bloom_petal_earrings.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Textured Bloom Petal Earrings | Elegant Garden Collection</h3>
+<div class="price">
+
+<span class="old-price">₹179</span>
+
+<span class="new-price">₹129</span>
+
+</div>
+
+<div class="card-buttons">
+
+<button class="cart-btn"
+onclick="addToCart(
+'Textured Bloom Petal Earrings | Elegant Garden Collection',
+129,
+'images/textured_bloom_petal_earrings.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Textured Bloom Petal Earrings | Elegant Garden Collection',
+129,
+'images/textured_bloom_petal_earrings.png'
+)">
+Buy Now
+</button>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="product.html"></script>
+<script src="products.js"></script>
+<script src="index1.js"></script>
+</body>
+</html>
