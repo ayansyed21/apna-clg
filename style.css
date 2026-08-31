@@ -324,9 +324,7 @@ text-transform: uppercase;
         justify-content:center;
     }
 
-    .hero-content{
-        padding:40px;
-    }
+
 
     .hero-content h1{
         font-size:55px;
@@ -336,12 +334,23 @@ text-transform: uppercase;
 
 @media(max-width:768px){
 
+    .hero-content{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding:30px 20px;
+        margin: 0;
+    
+
+    }
+
     .categories{
         justify-content:flex-start;
     }
 
     .hero{
         height:75vh;
+        overflow: hidden;
     }
 
     .hero-content h1{
