@@ -340,6 +340,8 @@ text-transform: uppercase;
         box-sizing: border-box;
         padding:30px 20px;
         margin: 0;
+        position: relative;
+        left: 0;
     
 
     }
