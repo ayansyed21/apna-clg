@@ -354,6 +354,13 @@ text-transform: uppercase;
         justify-content:center;
     }
 
+
+.nav-icons{
+    position: static;
+    margin-left: auto;
+    gap: 15px;
+}
+
     .hero{
         height: auto;
         padding: 40px 15px;
@@ -373,15 +380,11 @@ text-transform: uppercase;
         width:90px;
         height:90px;
     }
+
 }
 
 @media (max-width: 480px){
 
-.nav-icons{
-    position: static;
-    margin-left: 0;
-    gap: 15px;
-}
 
     .hero{
         height: auto;
