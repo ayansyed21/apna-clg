@@ -426,6 +426,13 @@ text-transform: uppercase;
     gap: 7px;
 }
 
+.nav-icons{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .nav-links a {
     font-size: 12px;
 }
