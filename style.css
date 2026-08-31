@@ -331,8 +331,9 @@ text-transform: uppercase;
 @media(max-width:768px){
 
     .logo-img{
-        margin-left:0 ;
-        margin-right: auto;
+        margin:0 ;
+      position: absolute;
+        left: 50%;
         display: block;
     }
 
@@ -414,18 +415,18 @@ text-transform: uppercase;
 @media (max-width: 480px){
 
 .navbar {
+    height: 70px;
     display: flex;
     flex-direction:row;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px;
+padding: 0 15px;
+position: relative;
 }
 
 .nav-links{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    display: none;
+   
 }
 
 .nav-icons{
