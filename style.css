@@ -376,6 +376,13 @@ text-transform: uppercase;
 }
 
 @media (max-width: 480px){
+
+.nav-icons{
+    position: static;
+    margin-left: 0;
+    gap: 15px;
+}
+
     .hero{
         height: auto;
         padding: 30px 15px;
