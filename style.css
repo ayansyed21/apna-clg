@@ -312,7 +312,7 @@ text-transform: uppercase;
 
 /* RESPONSIVE */
 
-@media(max-width:991px){
+@media(max-width:991px) and ( min-width:480px){
 
     .navbar{
         flex-direction:column;
