@@ -414,16 +414,18 @@ text-transform: uppercase;
 @media (max-width: 480px){
 
 .navbar {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
 }
 
 .nav-links{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 7px;
+    gap: 10px;
 }
 
 .nav-icons{
