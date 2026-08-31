@@ -312,7 +312,7 @@ text-transform: uppercase;
 
 /* RESPONSIVE */
 
-@media(max-width:991px) and ( min-width:480px){
+@media(max-width:991px) and ( min-width:768px){
 
     .navbar{
         flex-direction:column;
@@ -328,7 +328,11 @@ text-transform: uppercase;
       gap: 15px;
     }
 
-
+.nav-icons{
+    position: static;
+    margin-left: auto;
+    gap: 15px;
+}
 
     .hero-content h1{
         font-size:36px;
@@ -354,12 +358,6 @@ text-transform: uppercase;
         justify-content:center;
     }
 
-
-.nav-icons{
-    position: static;
-    margin-left: auto;
-    gap: 15px;
-}
 
     .hero{
         height: auto;
