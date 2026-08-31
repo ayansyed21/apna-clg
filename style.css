@@ -613,7 +613,7 @@ text-transform: uppercase;
 @media(max-width:768px){
 
 .product-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(1fr);
     gap:14px;
 }
 
@@ -627,7 +627,7 @@ text-transform: uppercase;
 
 .card h3{
     font-size:15px;
-    height:45px;
+    height:auto;
 }
 
 .new-price{
