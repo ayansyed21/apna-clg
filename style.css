@@ -17,7 +17,7 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:4px 37px;
+    padding:10px 20px;
 }
 
 .logo img{
@@ -380,6 +380,11 @@ text-transform: uppercase;
 
 .categories::-webkit-scrollbar {
   display: none;
+}
+
+.logo img{
+    max-width: 100px !important;
+    height: auto;
 }
 
 .category-item {
