@@ -357,7 +357,7 @@ text-transform: uppercase;
 
 
     .hero{
-        height: auto;
+        height: 350px;
         padding: 20px 10px;
         overflow: hidden;
     }
