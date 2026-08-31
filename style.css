@@ -330,6 +330,11 @@ text-transform: uppercase;
 
 @media(max-width:768px){
 
+    .logo-img{
+        margin-left:0 ;
+        margin-right: auto;
+        display: block;
+    }
 
 
     .hero-content{
@@ -341,6 +346,7 @@ text-transform: uppercase;
         position: relative;
         left: 0;
     
+   
 
     }
 
