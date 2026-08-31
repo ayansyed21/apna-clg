@@ -18,10 +18,11 @@ body{
     align-items:center;
     justify-content:space-between;
     padding:10px 20px;
+    height: 100px;
 }
 
 .logo img{
-    width:160px;
+    width:130px;
     object-fit:contain;
 }
 
@@ -226,7 +227,7 @@ text-transform: uppercase;
 
 .hero{
     width:100%;
-    height:150vh;
+    height:105vh;
 
     background:
     linear-gradient(
