@@ -1,4 +1,4 @@
-// =====================================
+// ====================================
 // 🛒 LOAD CART FROM STORAGE
 // =====================================
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -244,7 +244,8 @@ overlaySearch.addEventListener("input", (e) => {
 
   searchTimer = setTimeout(() => {
     // Light search query
-    const results = allProducts.filter(p => p.name.toLowerCase().includes(value));
+   const regex = new RegExp(`\\b${value.trim()}`, 'i');
+const results = allProducts.filter(p => regex.test(p.name));
 
     if (results.length > 0) {
       // Speed ke liye maximum 5 items hi show karenge

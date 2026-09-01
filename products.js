@@ -456,22 +456,107 @@ const allProducts = [
     image1: "images/textured_bloom_petal_earrings_ear.png",
     image2: "images/textured_bloom_petal_earrings.png"
 },
-{ id: 58, name: "Ayeluxe Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/ayeluxe_necklace.png" },
+{
+    id: 57,
+    name: "Ayeluxe Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/ayeluxe_necklace.png",
+    image2: "images/ayeluxe_necklace.png"
+},
+{
+    id: 58,
+    name: "Luxury Ruby Drop Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/luxury_ruby_drop_necklace.png",
+    image2: "images/luxury_ruby_drop_necklace.png"
+},
+{
+    id: 59,
+    name: "Classic Diamond Pendant Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/classic_diamond_pendant_necklace.png",
+    image2: "images/classic_diamond_pendant_necklace.png"
+},
+{
+    id: 60,
+    name: "Royal Clover Pendant Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/royal_clover_pendant_necklace.png",
+    image2: "images/royal_clover_pendant_necklace.png"
+},
+{
+    id: 61,
+    name: "Layered Leaf Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/layered_leaf_necklace.png",
+    image2: "images/layered_leaf_necklace.png"
+},
+{
+    id: 62,
+    name: "Twisted Heart Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/twisted_heart_necklace.png",
+    image2: "images/twisted_heart_necklace.png"
+},
+{
+    id: 63,
+    name: "Pearl Drop Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/pearl_drop_necklace.png",
+    image2: "images/pearl_drop_necklace.png"
+},
+{
+    id: 64,
+    name: "Elegant Gold Pendant Necklace",
+    price: 499,
+    category: "Necklace",
+    image1: "images/elegant_gold_pendant_necklace.png",
+    image2: "images/elegant_gold_pendant_necklace.png"
+},
+{
+    id: 65,
+    name: "Elegant Floral Diamond Ring",
+    price: 549,
+    category: "ring",
+    image1: "images/elegant_floral_diamond_ring.png",
+    image2: "images/elegant_floral_diamond_ring.png"
+},
 
-{ id: 59, name: "Luxury Ruby Drop Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/luxury_ruby_drop_necklace.png" },
+{
+    id: 68,
+    name: "Elegant Diamond Ring",
+    price: 599,
+    category: "Ring",
+    image1: "images/elegant_round_stone_ring.png",
+    image2: "images/elegant_round_stone_ring.png"
+},
 
-{ id: 60, name: "Classic Diamond Pendant Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/classic_diamond_pendant_necklace.png" },
+{
+    id: 66,
+    name: "Luxury Cushion Halo Ring",
+    price: 649,
+    category: "Ring",
+    image1: "images/luxury_cushion_halo_ring.png",
+    image2: "images/luxury_cushion_halo_ring.png"
+},
+{
+    id: 67,
+    name: "Classic Diamond Ring",
+    price: 749,
+    category: "Ring",
+    image1: "images/classic_round_diamond_ring.png",
+    image2: "images/classic_round_diamond_ring.png"
+},
 
-{ id: 61, name: "Royal Clover Pendant Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/royal_clover_pendant_necklace.png" },
-
-{ id: 62, name: "Layered Leaf Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/layered_leaf_necklace.png" },
-
-{ id: 63, name: "Twisted Heart Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/twisted_heart_necklace.png" },
-
-{ id: 64, name: "Pearl Drop Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/pearl_drop_necklace.png" },
-
-{ id: 65, name: "Elegant Gold Pendant Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/elegant_gold_pendant_necklace.png" },
 ];
+
 
 
 
