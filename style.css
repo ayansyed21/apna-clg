@@ -430,10 +430,11 @@ position: relative;
 }
 
 .nav-icons{
-    margin-left: auto;
+    position: absolute;
+    margin-right: 20px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .nav-links a {
