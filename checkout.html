@@ -182,82 +182,71 @@ document.getElementById("pincode").addEventListener("input", function () {
 });
 
 // ✅ MAIN FUNCTION
-function goPayment() {
+function goPayment(e) {
+    if (e) e.preventDefault();
 
-  let name = document.getElementById("name");
-  let phone = document.getElementById("phone");
-  let pin = document.getElementById("pincode");
+    let name = document.getElementById("name");
+    let phone = document.getElementById("phone");
+    let pin = document.getElementById("pincode");
 
-  let valid = true;
+    let valid = true;
 
-  if (!name.value) {
-    name.classList.add("error-input");
-    valid = false;
-  }
+    if (!name.value.trim()) {
+        name.classList.add("error-input");
+        valid = false;
+    }
 
-  if (!/^[6-9]\d{9}$/.test(phone.value)) {
-    valid = false;
-  }
+    if (!/^[6-9]\d{9}$/.test(phone.value.trim())) {
+        phone.classList.add("error-input");
+        valid = false;
+    }
 
-  if (!/^\d{6}$/.test(pin.value)) {
-    valid = false;
-  }
+    if (!/^\d{6}$/.test(pin.value.trim())) {
+        pin.classList.add("error-input");
+        valid = false;
+    }
 
-  if (!valid) return;
+    if (!valid) return;
 
+    let item = JSON.parse(localStorage.getItem("selectedProduct")) || {};
 
+    // Button UI instant update (Spinner/Loader effect)
+    const btn = document.querySelector("button[onclick*='goPayment']") || document.getElementById("payBtn");
+    if (btn) {
+        btn.disabled = true;
+        btn.innerText = "Processing... Please wait";
+    }
 
-// ✅ page load pe run hoga
-let cartTotal = localStorage.getItem("totalPrice");
-let item = JSON.parse(localStorage.getItem("selectedProduct"));
-
-console.log("Selected Product:", item);
-
-if(cartTotal){
-document.getElementById("product-name").innerText = "Cart Order";
-document.getElementById("product-price").innerText = "₹" + cartTotal;
-}
-  else if (item){
-
-    document.getElementById("product-name").innerText = item.name;
-    document.getElementById("product-price").innerText = "₹" + item.price;
-  }
-
-
-// 🔽 ab tera function
-function goPayment() {
-}
-
-
-
-  fetch("https://apna-clg.onrender.com/order", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      name: name.value,
-      phone: phone.value,
-      address: document.getElementById("address").value,
-      pincode: document.getElementById("pincode").value,
-      city: document.getElementById("city").value,
-      state: document.getElementById("state").value,
-      product: item.name,
-      price: item.price,
-      quantity: 1,
-      image: item.image
+    fetch("https://apna-clg.onrender.com/order", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name.value,
+            phone: phone.value,
+            address: document.getElementById("address").value,
+            pincode: pin.value,
+            city: document.getElementById("city").value,
+            state: document.getElementById("state").value,
+            product: item.name || "N/A",
+            price: item.price || 0,
+            quantity: 1,
+            image: item.image || ""
+        })
     })
-  })
-  .then(res => res.json())
-  .then(data => {
-  
-    window.location.href = "payment.html";
-  })
-  .catch(err => {
-   
-    console.log(err);
-  });
-
+    .then(res => res.json())
+    .then(data => {
+        window.location.href = "payment.html";
+    })
+    .catch(err => {
+        console.error("Error:", err);
+        alert("Server response fail hua, check network!");
+        if (btn) {
+            btn.disabled = false;
+            btn.innerText = "Proceed to Payment";
+        }
+    });
 }
 
 </script>
