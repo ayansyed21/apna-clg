@@ -230,7 +230,7 @@ function goPayment() {
 
 
 
-  fetch("https://apna-clg.onrender.com", {
+  fetch("https://apna-clg.onrender.com/order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -254,7 +254,7 @@ function goPayment() {
     window.location.href = "payment.html";
   })
   .catch(err => {
-    alert("Error saving order ❌");
+   
     console.log(err);
   });
 
