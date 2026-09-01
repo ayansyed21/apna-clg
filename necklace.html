@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayeluxe Products</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+
+body{
+    margin:0;
+      font-family: 'Poppins',sans-serif;
+    background:#f7f7f7;
+}
+
+
+
+
+/* PRODUCTS */
+
+.products{
+    padding:30px 20px;
+}
+
+/* GRID */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* IMAGE */
+
+.img-box{
+    position:relative;
+    overflow:hidden;
+}
+
+.img-box img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    display:block;
+    transition:0.4s;
+}
+
+.hover-img{
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+}
+
+.card:hover .hover-img{
+    opacity:1;
+}
+
+.card:hover .main-img{
+    opacity:0;
+}
+
+/* SALE */
+
+.sale-tag{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:#ef5f6f;
+    color:white;
+    padding:6px 12px;
+    font-size:12px;
+    font-weight:600;
+    border-radius:4px;
+}
+
+/* TITLE */
+
+.card h3{
+    font-size:14px;
+    padding:14px 14px 5px;
+    color:#333;
+    line-height:1.4;
+}
+
+/* PRICE */
+
+.price{
+    padding:0 14px 14px;
+}
+
+.old-price{
+    color:#d98a94;
+    text-decoration:line-through;
+    margin-right:8px;
+    font-size:16px;
+}
+
+.new-price{
+    font-size:18px;
+    font-weight:700;
+}
+
+/* BUTTONS */
+
+.card-buttons{
+    display:flex;
+    gap:8px;
+    padding:0 14px 18px;
+}
+
+.cart-btn,
+.buy-btn{
+    flex:1;
+    height:42px;
+    border:none;
+    border-radius:25px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cart-btn{
+    background:#ef9fb0;
+    color:white;
+}
+
+.cart-btn:hover{
+    background:#e88bb0;
+}
+
+.buy-btn{
+    background:black;
+    color:white;
+}
+
+.buy-btn:hover{
+    background:#e78ea1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.product-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+}
+
+.img-box img{
+    height:240px;
+}
+
+.card h3{
+    font-size:15px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #333;
+    margin: 12px 14px 18px;
+    min-height: 48px;
+    letter-spacing: 0.2px;
+}
+
+.card{
+    background:#fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.old-price{
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+.new-price{
+    font-size:16px;
+    font-weight: 500;
+    color: #111;
+}
+
+
+.card-buttons{
+    flex-direction:column;
+}
+
+.cart-btn,
+.buy-btn{
+font-weight: 500;
+    font-size:14px;
+}
+
+}
+
+</style>
+
+
+</head>
+<body>
+
+    <section class="products">
+      <div class="product-grid">
+
+
+    <!-- CARD 1 -->
+
+<div class="card" onclick="openProduct(57)">
+
+<div class="img-box">
+
+<img src="images/ayeluxe_necklace.png" class="main-img">
+
+<img src="images/ayeluxe_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>AyeLuxe Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'    AyeLuxe Necklace',
+299,
+'images/ayeluxe_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'AyeLuxe Necklace',
+299,
+'images/ayeluxe_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+
+   <!-- CARD 2 -->
+
+<div class="card" onclick="openProduct(58)">
+
+<div class="img-box">
+
+<img src="images/luxury_ruby_drop_necklace.png" class="main-img">
+
+<img src="images/luxury_ruby_drop_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Luxury Ruby Drop Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Luxury Ruby Drop Necklace',
+499,
+'images/luxury_ruby_drop_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Luxury Ruby Drop Necklace',
+499,
+'images/luxury_ruby_drop_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card" onclick="openProduct(59)">
+
+<div class="img-box">
+
+<img src="images/classic_diamond_pendant_necklace.png" class="main-img">
+
+<img src="images/classic_diamond_pendant_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Classic Diamond Pendant Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Classic Diamond Pendant Necklace',
+499,
+'images/classic_diamond_pendant_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Classic Diamond Pendant Necklace',
+499,
+'images/classic_diamond_pendant_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card" onclick="openProduct(60)">
+
+<div class="img-box">
+
+<img src="images/pearl_drop_necklace.png" class="main-img">
+
+<img src="images/pearl_drop_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Pearl Drop Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Pearl Drop Necklace',
+499,
+'images/luxury_ruby_drop_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Pearl Drop Necklace',
+499,
+'images/luxury_ruby_drop_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+
+<div class="card" onclick="openProduct(61)">
+
+<div class="img-box">
+
+<img src="images/elegant_gold_pendant_necklace.png" class="main-img">
+
+<img src="images/elegant_gold_pendant_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Elegant Gold Pendant Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Elegant Gold Pendant Necklace',
+499,
+'images/elegant_gold_pendant_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Elegant Gold Pendant Necklace',
+499,
+'images/elegant_gold_pendant_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+<div class="card" onclick="openProduct(62)">
+
+<div class="img-box">
+
+<img src="images/layered_leaf_necklace.png" class="main-img">
+
+<img src="images/layered_leaf_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Layered Leaf Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Layered Leaf Necklace',
+499,
+'images/layered_leaf_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Layered Leaf Necklace',
+499,
+'images/layered_leaf_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card" onclick="openProduct(63)">
+
+<div class="img-box">
+
+<img src="images/royal_clover_pendant_necklace.png" class="main-img">
+
+<img src="images/royal_clover_pendant_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Royal Clover Pendant Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Royal Clover Pendant Necklace',
+499,
+'images/royal_clover_pendant_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Royal Clover Pendant Necklace',
+499,
+'images/royal_clover_pendant_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+<div class="card" onclick="openProduct(64)">
+
+<div class="img-box">
+
+<img src="images/twisted_heart_necklace.png" class="main-img">
+
+<img src="images/twisted_heart_necklace.png" class="hover-img">
+
+<span class="sale-tag">
+BUY 3 GET 1 FREE
+</span>
+
+</div>
+
+<h3>Twisted Heart Necklace</h3>
+
+<div class="price">
+
+<span class="old-price">999</span>
+
+<span class="new-price">499</span>
+
+</div>
+
+<div class="card-buttons" >
+
+<button class="cart-btn"
+onclick="addToCart(
+'Twisted Heart Necklace',
+499,
+'images/twisted_heart_necklace.png'
+)">
+Add to Cart
+</button>
+
+<button class="buy-btn"
+onclick="buyNowDirect(
+'Twisted Heart Necklace',
+499,
+'images/twisted_heart_necklace.png'
+)">
+Buy Now
+</button>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<script src="products.js"></script>
+<script src="index1.js"></script>
+
+</body>
+</html>

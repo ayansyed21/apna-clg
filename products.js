@@ -455,7 +455,22 @@ const allProducts = [
     category: "Earrings",
     image1: "images/textured_bloom_petal_earrings_ear.png",
     image2: "images/textured_bloom_petal_earrings.png"
-}
+},
+{ id: 58, name: "Ayeluxe Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/ayeluxe_necklace.png" },
+
+{ id: 59, name: "Luxury Ruby Drop Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/luxury_ruby_drop_necklace.png" },
+
+{ id: 60, name: "Classic Diamond Pendant Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/classic_diamond_pendant_necklace.png" },
+
+{ id: 61, name: "Royal Clover Pendant Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/royal_clover_pendant_necklace.png" },
+
+{ id: 62, name: "Layered Leaf Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/layered_leaf_necklace.png" },
+
+{ id: 63, name: "Twisted Heart Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/twisted_heart_necklace.png" },
+
+{ id: 64, name: "Pearl Drop Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/pearl_drop_necklace.png" },
+
+{ id: 65, name: "Elegant Gold Pendant Necklace", price: "₹499", oldPrice: "₹999", category: "necklace", img: "images/elegant_gold_pendant_necklace.png" },
 ];
 
 
