@@ -6,10 +6,10 @@
   "scripts": {
     "start": "node server.js"
   },
-
   "dependencies": {
     "cors": "^2.8.6",
     "firebase": "^12.12.1",
+    "mongodb": "^7.6.0",
     "mongoose": "^9.5.0",
     "razorpay": "^2.9.6"
   }

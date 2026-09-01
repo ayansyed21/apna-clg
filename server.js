@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname));
 // MongoDB connect
-mongoose.connect('mongodb://127.0.0.1:27017/ayeluxe')
+mongoose.connect("mongodb+srv://ayansayyed622_db_user:ayanasha2122@cluster0.p9biqxk.mongodb.net/?appName=Cluster0")
 
 .then(() => console.log("MongoDB connected ✅"))
 .catch(err => console.log(err));
