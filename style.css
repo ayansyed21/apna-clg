@@ -430,8 +430,8 @@ position: relative;
 }
 
 .nav-icons{
-    position: absolute;
-    margin-right: 20px;
+    position: static;
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 12px;
